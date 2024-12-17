@@ -1,0 +1,78 @@
+body {
+    font-family: "Almarai", sans-serif;
+}
+
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 90vh;
+    width: 100%;
+}
+
+.btn-green {
+    background-color: #3CB57A;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.nav-link {
+    font-size: 18px !important;
+    color: black;
+}
+
+.nav-link:hover, .active {
+    color: #3CB57A !important;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-store {
+    width: 200px;
+}
+
+
+.fixed-right {
+    position: absolute;
+    top: 10;
+    right: 0;
+    z-index: 1000;
+}
+
+.noise-leaf  {
+    width: 10%;
+}  
+
+@media (max-width: 1505px) {
+    .noise-leaf {
+        width: 7%;
+    }
+}
+
+@media (max-width: 478px) {
+    .noise-leaf {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .img-store {
+        width: 40%;
+    }
+}
