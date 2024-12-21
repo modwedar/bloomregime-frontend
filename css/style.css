@@ -21,6 +21,11 @@ header {
     font-size: 14px;
 }
 
+.nav-bar {
+  width: 90%;
+  margin: auto;
+}
+
 .nav-link {
     font-size: 18px !important;
     color: black;
@@ -28,6 +33,7 @@ header {
 
 .nav-link:hover, .active {
     color: #3CB57A !important;
+    font-weight: bold;
 }
 
 p {
@@ -123,60 +129,68 @@ h4 {
     position: absolute;
     transition: transform 400ms, left 400ms, opacity 400ms, z-index 0s;
     opacity: 1;
+  }
+
+  #item_1, #item_2, #item_3, #item_4, #item_5, #item_6, #item_7, #item_8 {
     background-color: white;
     border-radius: 50px;
     box-shadow: 0px 0px 45px 2px rgba(0, 0, 0, 0.1);
   }
   #carousel div.hideLeft {
-    left: 0%;
+    left: -3%;
     top: 10%;
     transform: translateY(50%) translateX(-50%);
-    width: 300px;
-    height: 300px;
+    width: 23vw;
+    height: 23vw;
+    opacity: 0;
   }
   #carousel div.hideRight {
     left: 100%;
     transform: translateY(50%) translateX(-50%);
-    width: 300px;
-    height: 300px;
+    width: 23vw;
+    height: 23vw;
+    opacity: 0;
   }
   #carousel div.prev {
     z-index: 5;
-    left: 24%;
+    left: 21%;
     top: 10%;
     transform: translateY(50px) translateX(-50%);
-    width: 300px;
-    height: 300px;
+    width: 23vw;
+    height: 23vw;
   }
   #carousel div.prevLeftSecond {
     z-index: 4;
-    left: 1.7%;
+    left: -3%;
+    top: 10%;
     transform: translateY(50%) translateX(-50%);
+    width: 23vw;
+    height: 23vw;
   }
   #carousel div.selected {
     z-index: 10;
-    left: 50%;
+    left: 48.6%;
     top: 10px;
     transform: translateY(0px) translateX(-50%);
-    width: 350px;
-    height: 350px;
+    width: 30vw;
+    height: 30vw;
   }
   #carousel div.next {
     z-index: 5;
-    left: 76%;
+    left: 76.7%;
     top: 10%;
     transform: translateY(50px) translateX(-50%);
-    width: 300px;
-    height: 300px;
+    width: 24vw;
+    height: 24vw;
   }
   #carousel div.nextRightSecond {
     z-index: 4;
-    left: 99.8%;
+    left: 101.8%;
     top: 10%;
     transform: translateY(50%) translateX(-50%);
     opacity: 0.7;
-    width: 300px;
-    height: 300px;
+    width: 24vw;
+    height: 24vw;
   }
   
   /*previous or next buttons css*/
@@ -186,9 +200,13 @@ h4 {
     margin: auto;
   }
 
+  a {
+    color: #3CB57A;
+  }
+
   .circle-btn {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     background-color: #3CB57A;
     display: flex;
@@ -200,6 +218,15 @@ h4 {
   }
 
   .circle-btn i {
-    font-size: 20px;
+    font-size: 30px;
     color: white;
+  }
+
+  .right-content {
+    padding-right: 8vw;
+  }
+
+  .slider-description {
+    margin-top: 5px;
+    width: 80%;
   }

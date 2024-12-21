@@ -14,10 +14,10 @@
 <body>
     <header class="main-header d-flex py-3">
         <img class="fixed-right pb-5 noise-leaf" src="assets/images/noise-green-leaf.png" />
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="container-fluid">
+            <div class="nav-bar d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <img src="assets/images/logo.png" alt="Logo" height="60px">
+                    <img src="assets/images/logo.png" alt="Logo" height="80px">
                 </div>
                 <nav class="nav d-none d-md-flex">
                     <ul class="d-flex list-unstyled m-0">
@@ -33,7 +33,7 @@
             </div>
 
             <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-6 text-center text-md-start right-content">
                     <h1 style="text-align: right;">
                         <span style="color: #3CB57A;">بلوم ريجيم</span> يساعدكِ في اكتشاف أفضل نسخة من نفسكِ.
                     </h1>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center mt-4 mt-md-0">
-                    <img src="assets/images/meal.png" class="img-fluid" alt="header meal" width="80%">
+                    <img src="assets/images/meal.png" class="img-fluid mb-5" alt="header meal" width="75%">
                 </div>
             </div>
         </div>
@@ -82,38 +82,75 @@
 
 
 <section class="features py-5">
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center mb-5" style="font-weight: bold;">ما يميزنا</h2>
         <div class="buttons d-flex justify-content-between align-items-center">
             <button class="circle-btn" role="button" id="prev">
-                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
             </button>
     
     
             <button class="circle-btn" role="button" id="next">
-                <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-arrow-left"></i>
             </button>
         </div>
         <div id="carousel" class="carousel">
 
-            <div id="item_1" class="hideLeft" data-pos="0">
+            <div id='item_1' class="hideLeft">
+                <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                    <img class="pb-3 mb-3" src="assets/images/history.svg" width="30%" height="30%">
+                    <h5 class="fw-bold">استشارات على مدار الساعة</h5>
+                    <p class="text-center slider-description"> لا تتردد في التواصل معنا في أي وقت، فنحن هنا لمساعدتكِ في كل خطوة من رحلتك الصحية.</p>
+                </div>
+              </div>
+     
+           <div id="item_2" class="prevLeftSecond">
+            <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                <img class="pb-3 mb-3" src="assets/images/heart-beat.svg" width="30%" height="30%">
+                <h5 class="fw-bold">تطبيقات تفاعلية</h5>
+                <p class="text-center slider-description" style="width: 80%;">استخدم تطبيقنا الذكي لمتابعة نظامك الصحي و النصائح المخصصة لك و تتبع تقدمكِ</p>
+            </div>
            </div>
      
-           <div id="item_2" class="prevLeftSecond" data-pos="1">
+           <div id="item_3" class="prev">
+            <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                <img class="pb-3 mb-3" src="assets/images/fork_and_knife.svg" width="30%" height="30%">
+                <h5 class="fw-bold">برامج غذائية مصممة خصيصًا لكِ</h5>
+                <p class="text-center slider-description" style="width: 80%;">نقدم لكِ نظامًا غذائيًا يُعد خصيصًا لاحتياجاتك وأهدافك الصحية، ليس مجرد حمية نمطية</p>
+            </div>
            </div>
      
-           <div id="item_3" class="prev" data-pos="2">
+           <div id="item_4" class="selected">
+            <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                <img class="pb-3 mb-3" src="assets/images/hand.svg" width="35%" height="35%">
+                <h5 class="fw-bold">أسعار تنافسية</h5>
+                <p class="text-center slider-description" style="width: 80%;"> نقدم لكِ برامجنا بأسعار معقولة تناسب ميزانيتك. </p>
+            </div>
            </div>
      
-           <div id="item_4" class="selected" data-pos="3">
+           <div id="item_5" class="next">
+            <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                <img class="pb-3 mb-3" src="assets/images/circles.svg" width="30%" height="30%">
+                <h5 class="fw-bold">ضمان الرضا</h5>
+                <p class="text-center slider-description" style="width: 80%;">نحن ملتزمون بمساعدتكِ في تحقيق أهدافك، وإن تكنِ راضي عن نتائج برنامجك</p>
+            </div>
            </div>
      
-           <div id="item_5" class="next" data-pos="4">
+           <div id="item_6" class="nextRightSecond">
+            <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                <img class="pb-3 mb-3" src="assets/images/call.svg" width="30%" height="30%">
+                <h5 class="fw-bold">مرونة في التواصل</h5>
+                <p class="text-center slider-description" style="width: 80%;">يمكنكِ التواصل معنا عبر الهاتف أو الواتساب او سناب شات او انستجرام او ماسنجر ، واختيار الطريقة التي تريحك أكثر.</p>
+            </div>
            </div>
-     
-           <div id="item_6" class="nextRightSecond" data-pos="5">
-            
-           </div>
+
+           <div id='item_7' class="hideRight">
+            <div class="d-flex flex-column align-items-center justify-content-center p-3 h-100 w-100">
+                <img class="pb-3 mb-3" src="assets/images/group.svg" width="30%" height="30%">
+                <h5 class="fw-bold">متابعتكِ خطوة بخطوة</h5>
+                <p class="text-center slider-description" style="width: 80%;"> نقدم لكِ برامجنا بأسعار معقولة تناسب ميزانيتك. </p>
+            </div>
+          </div>
      
          </div>
     </div>
