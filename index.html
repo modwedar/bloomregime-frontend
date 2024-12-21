@@ -9,19 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/18f8c213b2.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header d-flex align-items-center py-3" style="background-image: url('assets/images/header-background.svg');">
+    <header class="main-header d-flex py-3">
         <img class="fixed-right pb-5 noise-leaf" src="assets/images/noise-green-leaf.png" />
         <div class="container">
-            <!-- Navbar -->
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <!-- Logo -->
                 <div class="logo">
                     <img src="assets/images/logo.png" alt="Logo" height="60px">
                 </div>
-                <!-- Navigation -->
                 <nav class="nav d-none d-md-flex">
                     <ul class="d-flex list-unstyled m-0">
                         <li><a href="#" class="nav-link active">الرئيسية</a></li>
@@ -29,16 +26,13 @@
                         <li><a href="#" class="nav-link">أسئلة شائعة</a></li>
                     </ul>
                 </nav>
-                <!-- Action Buttons -->
                 <div class="d-flex align-items-center">
                     <button class="btn btn-green ms-2">اشترك الآن</button>
                     <a href="#"><span class="me-2">EN</span></a>
                 </div>
             </div>
 
-            <!-- Content Section -->
             <div class="row align-items-center">
-                <!-- النص -->
                 <div class="col-md-6 text-center text-md-start">
                     <h1 style="text-align: right;">
                         <span style="color: #3CB57A;">بلوم ريجيم</span> يساعدكِ في اكتشاف أفضل نسخة من نفسكِ.
@@ -47,19 +41,86 @@
                         بلوم رجيم هو وجهتك الشاملة لتحقيق تحول صحي مستدام. نقدم لكِ برامج تغذية علاجية مخصصة مصممة خصيصاً لتحقيق أهدافك، مع متابعة شخصية من خبراء التغذية لدينا.
                     </h4>
                     <div class="d-flex justify-content-center justify-content-md-start mt-4 gap-3">
-                        <img class="img-store" src="assets/images/app-store.png" alt="App Store">
-                        <img class="img-store" src="assets/images/google-play.png" alt="Google Play">
+                        <a href="#"><img class="img-store" src="assets/images/app-store.png" alt="App Store"></a>
+                        <a href="#"><img class="img-store" src="assets/images/google-play.png" alt="Google Play"></a>
                     </div>
                 </div>
-                <!-- الصورة -->
                 <div class="col-md-6 text-center mt-4 mt-md-0">
-                    <img src="assets/images/meal.png" class="img-fluid" alt="header meal">
+                    <img src="assets/images/meal.png" class="img-fluid" alt="header meal" width="80%">
                 </div>
             </div>
         </div>
+        <div class="green-container container">
+            <div class="py-5">
+                <h2 class="mb-5 pe-3">خدماتنا</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-3 text-center">
+                        <img src="assets/images/natural-food.svg" alt="الخدمة 1" class="img-fluid mb-3">
+                        <h5>برامج تغذية علاجية مخصصة</h5>
+                        <p>تصميم برامج غذائية فردية تناسب احتياجاتك وأهدافك الصحية.</p>
+                    </div>
+                    <div class="col-md-1 d-none d-md-block">
+                        <div class="vertical-line"></div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="assets/images/dr-icon.svg" alt="الخدمة 2" class="img-fluid mb-3">
+                        <h5>استشارات تغذوية</h5>
+                        <p>تقديم استشارات فردية لتقييم وضعك الصحي وتحديد أهدافك..</p>
+                    </div>
+                    <div class="col-md-1 d-none d-md-block">
+                        <div class="vertical-line"></div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="assets/images/healthy-recognition.svg" alt="الخدمة 3" class="img-fluid mb-3">
+                        <h5>متابعة شخصية</h5>
+                        <p>متابعة مستمرة من قبل أخصائي تغذية للإجابة على أسئلتك وتقديم الدعم .</p>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </header>
 
-    <!-- Bootstrap JS -->
+
+<section class="features py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" style="font-weight: bold;">ما يميزنا</h2>
+        <div class="buttons d-flex justify-content-between align-items-center">
+            <button class="circle-btn" role="button" id="prev">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+    
+    
+            <button class="circle-btn" role="button" id="next">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div id="carousel" class="carousel">
+
+            <div id="item_1" class="hideLeft" data-pos="0">
+           </div>
+     
+           <div id="item_2" class="prevLeftSecond" data-pos="1">
+           </div>
+     
+           <div id="item_3" class="prev" data-pos="2">
+           </div>
+     
+           <div id="item_4" class="selected" data-pos="3">
+           </div>
+     
+           <div id="item_5" class="next" data-pos="4">
+           </div>
+     
+           <div id="item_6" class="nextRightSecond" data-pos="5">
+            
+           </div>
+     
+         </div>
+    </div>
+</section>
+
+
+    <script src="js/main.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
