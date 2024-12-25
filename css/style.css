@@ -374,17 +374,114 @@ h1 {
   .green-container {
     bottom: -400px;
   }
+}
+
+@media (max-width: 991px) {
+  header {
+    background-size: auto;
+    height: 600px;
+  }
+}
+
+
+@media (max-width: 1110px) {
+  #carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 20%;
+  }
+
+  #carousel div {
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  #carousel div.hideLeft,
+  #carousel div.hideRight,
+  #carousel div.prev,
+  #carousel div.prevLeftSecond,
+  #carousel div.next,
+  #carousel div.nextRightSecond {
+    display: none;
+  }
+
+  #carousel div.selected {
+    width: 100%;
+    height: 90%;
+    margin-top: 10px;
+  }
+
+  .buttons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 778px) {
+
+  .green-container {
+    bottom: -320px;
+  }
+
+  .green-container h2 {
+    font-size: 20px;
+  }
+
+  .green-container h5 {
+    font-size: 18px;
+  }
+
+  .green-container p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    background-size: auto;
+    height: 1060px;
+  }
   
 }
 
-@media (max-width: 1000px) {
-  .right-content h1 {
-    font-size: 20px;
-  }
-  .right-content h4 {
-    font-size: 14px;
-  }
+@media (max-width: 576px) {
   .green-container {
-    bottom: -420px;
+    bottom: -450px;
+    width: 95%;
+  }
+
+  .features {
+    margin-top: 70vh;
+  }
+}
+
+@media (max-width: 430px) {
+  .right-content {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+  }
+
+  .img-store {
+    width: 80%;
+  }
+
+  #carousel {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: 383px) {
+  .logo img {
+    height: 60px;
+  }
+}
+
+@media (min-width: 383px) {
+  .logo img{
+    height: 80px;
   }
 }
