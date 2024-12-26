@@ -13,67 +13,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <style>
-        .burger-menu {
-           
-        }
-
-        .btn-burger {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        #mobile-menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        #mobile-menu.active {
-            display: block;
-        }
-
-        #mobile-menu ul {
-            padding: 0;
-            list-style: none;
-        }
-
-        #mobile-menu li {
-            margin-bottom: 10px;
-        }
-
-        #mobile-menu li:last-child {
-            margin-bottom: 0;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .nav-link:hover {
-            color: #3CB57A;
-        }
-    </style>
 </head>
 <body>
     <header class="main-header d-flex py-3">
         <div class="container-fluid">
-            <div class="nav-bar d-flex justify-content-between align-items-center">
+            <div class="nav-bar d-flex justify-content-between align-items-center mb-3 mb-lg-0">
                 <div class="burger-menu d-md-none">
-                    <button class="btn btn-burger p-0" id="burger-menu-btn">
+                    <button class="btn btn-burger p-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <i class="ri-menu-line"></i>
                     </button>
                 </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <a class="navbar-brand m-0 d-flex justify-content-center align-items-center p-0 mb-4 d-block d-lg-none" href="#">
+                            <img class="navbar-logo" src="assets/images/logo.png" alt="navbar-logo">
+                        </a>
+                        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 p-0 m-0 gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link transition-300ms text-body opacity-60 active" aria-current="page" href="#">الصفحة الرئيسية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link transition-300ms text-body opacity-60" href="#">حساب السعرات الحرارية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link transition-300ms text-body opacity-60" href="#">من نحن</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link transition-300ms text-body opacity-60" href="#">اتصل بنا</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link transition-300ms text-body opacity-60" href="#">English</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>                
                 <div class="logo">
                     <img src="assets/images/logo.png" alt="Logo">
                 </div>
@@ -87,7 +63,7 @@
                 <div class="d-flex align-items-center">
                     <button class="btn btn-green ms-2">اشترك الآن</button>
                     <a class="d-none d-md-flex" href="#"><span class="me-2">EN</span></a>
-                </div>                
+                </div>           
             </div>
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start right-content">
@@ -368,12 +344,6 @@
         <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة</p>
     </div>
 </footer>
-<script>
-    document.getElementById("burger-menu-btn").addEventListener("click", function () {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("active");
-    });
-</script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
