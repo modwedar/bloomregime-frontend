@@ -13,12 +13,67 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        .burger-menu {
+           
+        }
+
+        .btn-burger {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #mobile-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #mobile-menu.active {
+            display: block;
+        }
+
+        #mobile-menu ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        #mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        #mobile-menu li:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-link:hover {
+            color: #3CB57A;
+        }
+    </style>
 </head>
 <body>
     <header class="main-header d-flex py-3">
-        <img class="fixed-right pb-5 noise-leaf" src="assets/images/noise-green-leaf.png" />
         <div class="container-fluid">
             <div class="nav-bar d-flex justify-content-between align-items-center">
+                <div class="burger-menu d-md-none">
+                    <button class="btn btn-burger p-0" id="burger-menu-btn">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
                 <div class="logo">
                     <img src="assets/images/logo.png" alt="Logo">
                 </div>
@@ -31,10 +86,9 @@
                 </nav>
                 <div class="d-flex align-items-center">
                     <button class="btn btn-green ms-2">اشترك الآن</button>
-                    <a href="#"><span class="me-2">EN</span></a>
-                </div>
+                    <a class="d-none d-md-flex" href="#"><span class="me-2">EN</span></a>
+                </div>                
             </div>
-
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start right-content">
                     <h1 style="text-align: right;">
@@ -314,7 +368,12 @@
         <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة</p>
     </div>
 </footer>
-
+<script>
+    document.getElementById("burger-menu-btn").addEventListener("click", function () {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("active");
+    });
+</script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
