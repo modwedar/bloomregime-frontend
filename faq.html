@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico">
@@ -12,46 +13,112 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        crossorigin="anonymous">
     <style>
         .search-box {
-  display: flex;
-  align-items: center;
-  width: 80%;
-  margin: 50px auto;
-  border: 1px solid var(--main-gray);
-  border-radius: 15px;
-  overflow: hidden;
-}
+            display: flex;
+            align-items: center;
+            margin: 50px auto;
+            border: 1px solid var(--main-gray);
+            border-radius: 15px;
+            overflow: hidden;
+        }
 
-.search-box input {
-  border: none;
-  outline: none;
-  flex-grow: 1;
-  font-size: large;
-  padding: 25px 15px;
-}
+        .search-box input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            font-size: larger;
+            padding: 25px 40px;
+        }
 
-.search-box button {
-  background-color: var(--main-green);
-  border: none;
-  padding: 5px 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--main-white);
-}
+        .search-box button {
+            background-color: var(--main-green);
+            border: none;
+            padding: 5px 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--main-white);
+        }
 
-.search-box button:hover {
-  background-color: var(--main-green-hover);
-}
+        .search-box button:hover {
+            background-color: var(--main-green-hover);
+        }
 
-.search-box i {
-  font-size: xxx-large;
-}
+        .search-box i {
+            font-size: xxx-large;
+            color: white;
+        }
+
+        #accordion .panel {
+            border: none;
+            box-shadow: none;
+            margin-bottom: 5px;
+        }
+
+        #accordion .panel-heading {
+            padding: 0;
+            border: none;
+        }
+
+        .panel-title {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        #accordion .panel {
+            border: none;
+            box-shadow: none;
+            border: 1px solid var(--main-gray);
+            border-radius: 25px;
+        }
+
+        #accordion .panel-heading {
+            padding: 0;
+            border: none;
+            background: transparent;
+        }
+
+        #accordion .panel-title a {
+            display: block;
+            padding: 14px 26px 14px 30px;
+            font-size: larger;
+            color: black;
+            position: relative;
+            text-decoration: none;
+        }
+
+        #accordion .panel-title a:before,
+        #accordion .panel-title a.collapsed:before {
+            content: "\f106";
+            font-family: fontawesome;
+            font-size: 26px;
+            position: absolute;
+            top: 12px;
+            right: auto;
+            left: 30px;
+        }
+
+        #accordion .panel-title a.collapsed:before {
+            content: "\f107";
+        }
+
+        #accordion .panel-body {
+            font-size: 16px;
+            color: #555;
+            line-height: 25px;
+            padding: 20px 25px;
+            position: relative;
+            border: none;
+        }
     </style>
 </head>
+
 <body>
-    <header class="main-header d-flex py-3">
+    <header class="d-flex py-3">
         <div class="container-fluid">
             <div class="nav-bar d-flex justify-content-between align-items-center">
                 <div class="logo">
@@ -69,56 +136,134 @@
                     <a href="#"><span class="me-2">EN</span></a>
                 </div>
             </div>
-        </div>      
+        </div>
     </header>
 
-    <section class="container-fluid py-5">
+    <section class="content py-5">
         <h2 class="text-center mb-5 fw-bold">الأسئلة الشائعة</h2>
         <div class="search-box">
-            <input type="text" placeholder="ابحث عن سؤال">
-            <button>
+            <input id="searchInput" type="text" placeholder="ابحث عن سؤال">
+            <button onclick="filterQuestions()">
                 <i class="ri-search-line"></i>
             </button>
         </div>
-        
-    </section>
-
-<footer class="footer mt-5">
-    <div class="container">
-        <div class="row text-center text-md-end pb-5">
-            <div class="col-md-4 text-center text-md-end">
-                <img src="assets/images/white-logo.png" alt="Bloom Regime Logo">
-                <div class="d-flex justify-content-center justify-content-md-start social-icons mt-3">
-                    <a href="#"><img src="assets/images/facebook-icon.svg" alt="Facebook"></a>
-                    <a href="#"><img src="assets/images/instagram-icon.svg" alt="Instagram"></a>
-                    <a href="#"><img src="assets/images/twitter-icon.svg" alt="Twitter"></a>
-                    <a href="#"><img src="assets/images/whatsapp-icon.svg" alt="WhatsApp"></a>
-                    <a href="#"><img src="assets/images/snapchat-icon.svg" alt="Snapchat"></a>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default mb-4 py-4 px-3">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            ما هي برامج الاشتراك المتوفرة لديكم؟
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <p>نحن نقدم برامج شهرية وربع سنوية وسنوية لتلبية احتياجاتك التغذوية.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4 mt-5 mt-md-0 text-md-end">
-                <h4 class="fw-bold">تواصل معنا</h4>
-                <p>62145489</p>
-                <p><a href="mailto:info@bloomregime.com">info@bloomregime.com</a></p>
-                <p>الرياض - السليمانية شارع ابن كثير</p>
-                <p>جدة - الغدادية الغربية - المركز السعودي للأعمال</p>
+            <div class="panel panel-default mb-4 py-4 px-3">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                            data-parent="#accordion" href="#collapseTwo" aria-expanded="true"
+                            aria-controls="collapseTwo">
+                            هل يمكن تخصيص خطة غذائية تناسب احتياجاتي؟
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <p>نعم، نعمل على تصميم خطط غذائية مخصصة تناسب أهدافك واحتياجاتك الصحية.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 mb-4 mb-md-0 text-md-end">
-                <h4 class="fw-bold">البيانات القانونية</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#">بيان الخصوصية</a></li>
-                    <li><a href="#">شروط الاستخدام</a></li>
-                    <li><a href="#">شروط الاسترجاع</a></li>
-                </ul>
+            <div class="panel panel-default mb-4 py-4 px-3">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                            data-parent="#accordion" href="#collapseThree" aria-expanded="true"
+                            aria-controls="collapseThree">
+                            ما هي وسائل الدفع المتاحة؟
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <p>نوفر عدة وسائل دفع تشمل البطاقات البنكية والتحويل البنكي والدفع الإلكتروني.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <hr>
-        <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة</p>
-    </div>
-</footer>
+    </section>
 
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row text-center text-md-end pb-5">
+                <div class="col-md-4 text-center text-md-end">
+                    <img src="assets/images/white-logo.png" alt="Bloom Regime Logo">
+                    <div class="d-flex justify-content-center justify-content-md-start social-icons mt-3">
+                        <a href="#"><img src="assets/images/facebook-icon.svg" alt="Facebook"></a>
+                        <a href="#"><img src="assets/images/instagram-icon.svg" alt="Instagram"></a>
+                        <a href="#"><img src="assets/images/twitter-icon.svg" alt="Twitter"></a>
+                        <a href="#"><img src="assets/images/whatsapp-icon.svg" alt="WhatsApp"></a>
+                        <a href="#"><img src="assets/images/snapchat-icon.svg" alt="Snapchat"></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mt-5 mt-md-0 text-md-end">
+                    <h4 class="fw-bold">تواصل معنا</h4>
+                    <p>62145489</p>
+                    <p><a href="mailto:info@bloomregime.com">info@bloomregime.com</a></p>
+                    <p>الرياض - السليمانية شارع ابن كثير</p>
+                    <p>جدة - الغدادية الغربية - المركز السعودي للأعمال</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-md-end">
+                    <h4 class="fw-bold">البيانات القانونية</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">بيان الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">شروط الاسترجاع</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        function filterQuestions() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const panels = document.querySelectorAll('.panel');
+
+            panels.forEach(panel => {
+                const question = panel.querySelector('.panel-title a').textContent.toLowerCase();
+                if (question.includes(searchInput)) {
+                    panel.style.display = '';
+                } else {
+                    panel.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const panels = document.querySelectorAll('#accordion .panel');
+
+            panels.forEach(panel => {
+                panel.addEventListener('show.bs.collapse', function () {
+                    panel.style.backgroundColor = '#3CB57A1A';
+                });
+
+                panel.addEventListener('hide.bs.collapse', function () {
+                    panel.style.backgroundColor = 'white';
+                });
+            });
+        });
+
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/swiper.js"></script>
 </body>
+
 </html>
