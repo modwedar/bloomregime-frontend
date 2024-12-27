@@ -114,6 +114,30 @@
             position: relative;
             border: none;
         }
+
+        @media (max-width: 430px) {
+            #accordion .panel-title a {
+                padding: 14px 2px 14px 30px;
+            }
+
+            .search-box button {
+                padding: 5px 20px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .search-box input {
+                padding: 25px 5px;
+            }
+
+            .search-box button {
+                padding: 5px 10px;
+            }
+
+            #accordion .panel-title a {
+                padding: 14px 2px 14px 35px;
+            }
+        }
     </style>
 </head>
 
@@ -122,11 +146,13 @@
         <div class="container-fluid">
             <div class="nav-bar d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <img src="assets/images/logo.png" alt="Logo">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo">
+                    </a>
                 </div>
                 <nav class="nav d-none d-md-flex">
                     <ul class="d-flex list-unstyled m-0">
-                        <li><a href="#" class="nav-link">الرئيسية</a></li>
+                        <li><a href="/" class="nav-link">الرئيسية</a></li>
                         <li><a href="#" class="nav-link">المدونة</a></li>
                         <li><a href="#" class="nav-link active">أسئلة شائعة</a></li>
                     </ul>
