@@ -552,3 +552,45 @@ a {
   margin: auto;
 }
 
+.floating-icons {
+  position: fixed;
+  bottom: 20%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  width: 100%;
+}
+
+.whatsapp-icon {
+  position: absolute;
+  right: 5%;
+  animation: bounce 2s infinite;
+}
+
+.snapchat-icon {
+  position: absolute;
+  left: 5%;
+  animation: bounce 2s infinite;
+}
+
+.whatsapp-icon img,
+.snapchat-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover,
+.snapchat-icon img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
