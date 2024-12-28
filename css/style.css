@@ -554,7 +554,7 @@ a {
 
 .floating-icons {
   position: fixed;
-  bottom: 20%;
+  bottom: 17%;
   transform: translateY(-50%);
   z-index: 9999;
   width: 100%;
