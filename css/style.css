@@ -594,3 +594,18 @@ a {
       transform: translateY(-10px);
   }
 }
+
+.offcanvas-header {
+  padding: 0;
+}
+
+.offcanvas-header .btn-close {
+  margin: 17px -3px 17px 0;
+  --bs-btn-close-opacity: 1;
+}
+
+.separator {
+  background-color: #e0e3eb;
+  flex-shrink: 0;
+  height: 1px;
+}
