@@ -470,7 +470,6 @@ a {
     background-size: auto;
     height: 1000px;
   }
-
 }
 
 @media (max-width: 576px) {
@@ -593,6 +592,10 @@ a {
   50% {
       transform: translateY(-10px);
   }
+}
+
+.offcanvas {
+  width: 100%!important;
 }
 
 .offcanvas-header {
