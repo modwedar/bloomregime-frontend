@@ -16,7 +16,74 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <style>
+        .blog-item img {
+            width: 100%;
+            height: auto;
+        }
 
+        p {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 769px) {
+            .blog-item {
+                margin-bottom: 30px;
+            }
+        }
+
+        .pagination .page-link {
+            border-radius: 25px !important;
+        }
+
+        .pagination .page-link {
+            color: black;
+        }
+
+        .pagination {
+            padding-right: 0;
+        }
+
+        .pagination .active .page-link {
+            background-color: var(--main-green);
+            color: white;
+            border-color: var(--main-green);
+            height: 33px;
+            width: 33px;
+        }
+
+        .page-btn {
+            color: white;
+            border: none;
+        }
+
+        .previus-next {
+            border-color: var(--main-green);
+            padding: 12px 30px;
+        }
+
+        .previus-next:hover {
+            border-color: var(--main-green-hover);
+            background-color: var(--main-green-hover);
+            color: white;
+        }
+
+        #next {
+            margin-left: 5rem;
+        }
+
+        #previus {
+            margin-right: 5rem;
+        }
+
+        @media (max-width: 558px) {
+            #next {
+                margin-left: 10px;
+            }
+
+            #previus {
+                margin-right: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -25,33 +92,40 @@
         <div class="container-fluid">
             <div class="nav-bar d-flex justify-content-between align-items-center">
                 <div class="burger-menu d-md-none">
-                    <button class="btn btn-burger p-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <button class="btn btn-burger p-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        aria-controls="offcanvasExample">
                         <i class="ri-menu-line"></i>
                     </button>
                 </div>
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
                     <div class="container">
                         <div class="offcanvas-header">
-                            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
                         </div>
                     </div>
                     <div class="separator"></div>
                     <div class="offcanvas-body">
-                        <a class="navbar-brand m-0 d-flex justify-content-center align-items-center p-0 mb-4 d-block d-lg-none" href="#">
+                        <a class="navbar-brand m-0 d-flex justify-content-center align-items-center p-0 mb-4 d-block d-lg-none"
+                            href="#">
                             <img class="mobile-navbar-logo" src="assets/images/logo.png" alt="navbar-logo">
                         </a>
                         <ul class="navbar-nav justify-content-center flex-grow-1 p-0 m-0 gap-3">
                             <li class="nav-item">
                                 <i class="ri-home-fill" style="color: #3CB57A; font-size: larger;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60 active" aria-current="page" href="#">الرئيسية</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60 active"
+                                    aria-current="page" href="#">الرئيسية</a>
                             </li>
                             <li class="nav-item">
                                 <i class="ri-news-fill" style="font-size: larger;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="blog.html">المدونة</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60"
+                                    href="blog.html">المدونة</a>
                             </li>
                             <li class="nav-item">
                                 <i class="ri-questionnaire-fill" style="font-size: larger;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="faq.html">اسئلة شائعة</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="faq.html">اسئلة
+                                    شائعة</a>
                             </li>
                             <div class="separator"></div>
                             <li class="nav-item">
@@ -60,7 +134,8 @@
                             <div class="separator"></div>
                             <li class="nav-item">
                                 <i class="ri-user-line" style="font-size: larger;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#">تسجيل الدخول</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#">تسجيل
+                                    الدخول</a>
                             </li>
                         </ul>
                     </div>
@@ -87,8 +162,79 @@
 
     <section class="content py-5">
         <h2 class="text-center mb-5 fw-bold">المدونة</h2>
-       
+        <div class="row mb-3">
+            <div class="col-lg-5">
+                <div class="blog-item">
+                    <img src="assets/images/blog1.jpeg" alt="" class="img-fluid mb-3">
+                    <p>8 أكتوبر 2024</p>
+                    <h4>تناول الطعام الصحي: رحلة نحو حياة أفضل</h4>
+                    <p>اتباع نظام غذائي صحي ليس مجرد وسيلة لفقدان الوزن، بل هو نمط حياة يعزز الصحة العامة ويمنحك طاقة
+                        وحيوية كل يوم.</p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="blog-item row mb-4">
+                    <div class="col-md-4">
+                        <img src="assets/images/blog2.jpeg" alt="" class="img-fluid mb-3" width="300">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column">
+                            <p>8 أكتوبر 2024</p>
+                            <h4>تناول الطعام الصحي: رحلة نحو حياة أفضل</h4>
+                            <p>اتباع نظام غذائي صحي ليس مجرد وسيلة لفقدان الوزن، بل هو نمط حياة يعزز الصحة العامة ويمنحك
+                                طاقة وحيوية كل يوم.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item row mb-4">
+                    <div class="col-md-4">
+                        <img src="assets/images/blog3.jpeg" alt="" class="img-fluid mb-3" width="300">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column">
+                            <p>8 أكتوبر 2024</p>
+                            <h4>تناول الطعام الصحي: رحلة نحو حياة أفضل</h4>
+                            <p>اتباع نظام غذائي صحي ليس مجرد وسيلة لفقدان الوزن، بل هو نمط حياة يعزز الصحة العامة ويمنحك
+                                طاقة وحيوية كل يوم.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item row mb-4">
+                    <div class="col-md-4">
+                        <img src="assets/images/blog4.jpeg" alt="" class="img-fluid mb-3" width="300">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column">
+                            <p>8 أكتوبر 2024</p>
+                            <h4>تناول الطعام الصحي: رحلة نحو حياة أفضل</h4>
+                            <p>اتباع نظام غذائي صحي ليس مجرد وسيلة لفقدان الوزن، بل هو نمط حياة يعزز الصحة العامة ويمنحك
+                                طاقة وحيوية كل يوم.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a id="next" class="page-link previus-next" href="#" aria-label="التالي">
+                        التالي
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link page-btn" href="#">1</a></li>
+                <li class="page-item"><a class="page-link page-btn" href="#">2</a></li>
+                <li class="page-item"><a class="page-link page-btn" href="#">3</a></li>
+                <li class="page-item">
+                    <a id="previus" class="page-link previus-next" href="#" aria-label="السابق">
+                        السابق
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </section>
+
+
+
 
     <footer class="footer mt-5">
         <div class="container">
@@ -105,10 +251,8 @@
                 </div>
                 <div class="col-md-4 mb-4 mt-5 mt-md-0 text-md-end">
                     <h4 class="fw-bold">تواصل معنا</h4>
-                    <p>62145489</p>
+                    <p>00201044828371</p>
                     <p><a href="mailto:info@bloomregime.com">info@bloomregime.com</a></p>
-                    <p>الرياض - السليمانية شارع ابن كثير</p>
-                    <p>جدة - الغدادية الغربية - المركز السعودي للأعمال</p>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0 text-md-end">
                     <h4 class="fw-bold">البيانات القانونية</h4>
@@ -120,7 +264,7 @@
                 </div>
             </div>
             <hr>
-            <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة</p>
+            <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2025 جميع الحقوق محفوظة</p>
         </div>
     </footer>
 

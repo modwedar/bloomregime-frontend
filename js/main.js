@@ -171,3 +171,17 @@ const $$ = str => document.querySelectorAll(str);
     }
     app.carousel.init();
 })();
+
+window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    const parent = navbar.parentElement;
+    if (window.scrollY > 50) {
+        navbar.classList.add("sticky");
+        navbar.classList.add("px-3");
+        parent.classList.remove("container-fluid");
+    } else {
+        navbar.classList.remove("sticky");
+        navbar.classList.remove("px-3");
+        parent.classList.add("container-fluid");
+    }
+});

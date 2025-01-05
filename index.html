@@ -15,9 +15,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+
     <header class="main-header d-flex py-3">
         <div class="container-fluid">
-            <div class="nav-bar d-flex justify-content-between align-items-center mb-3 mb-lg-0">
+            <div id="navbar" class="nav-bar d-flex justify-content-between align-items-center mb-3 mb-lg-0">
                 <div class="burger-menu d-md-none">
                     <button class="btn btn-burger p-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <i class="ri-menu-line"></i>
@@ -72,7 +83,7 @@
                     </ul>
                 </nav>
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-green ms-2">اشترك الآن</button>
+                    <button class="btn btn-green ms-2" data-bs-toggle="modal" data-bs-target="#signupModal">اشترك الآن</button>
                     <a class="d-none d-md-flex" href="#"><span class="me-2">EN</span></a>
                 </div>           
             </div>
@@ -92,36 +103,8 @@
                 <div class="col-md-6 text-center mt-4 mt-md-0">
                     <img src="assets/images/meal.png" class="img-fluid mb-5" alt="header meal" width="75%">
                 </div>
-            </div>
-        </div>
-        <div class="green-container container">
-            <div class="py-5">
-                <h2 class="mb-5 pe-3">خدماتنا</h2>
-                <div class="row justify-content-center">
-                    <div class="col-sm-3 text-center">
-                        <img src="assets/images/natural-food.svg" alt="الخدمة 1" class="img-fluid mb-3">
-                        <h5>برامج تغذية علاجية مخصصة</h5>
-                        <p>تصميم برامج غذائية فردية تناسب احتياجاتك وأهدافك الصحية.</p>
-                    </div>
-                    <div class="col-sm-1 d-none d-md-block">
-                        <div class="vertical-line"></div>
-                    </div>
-                    <div class="col-sm-3 text-center">
-                        <img src="assets/images/dr-icon.svg" alt="الخدمة 2" class="img-fluid mb-3">
-                        <h5>استشارات تغذوية</h5>
-                        <p>تقديم استشارات فردية لتقييم وضعك الصحي وتحديد أهدافك..</p>
-                    </div>
-                    <div class="col-sm-1 d-none d-md-block">
-                        <div class="vertical-line"></div>
-                    </div>
-                    <div class="col-sm-3 text-center">
-                        <img src="assets/images/healthy-recognition.svg" alt="الخدمة 3" class="img-fluid mb-3">
-                        <h5>متابعة شخصية</h5>
-                        <p>متابعة مستمرة من قبل أخصائي تغذية للإجابة على أسئلتك وتقديم الدعم .</p>
-                    </div>
-                </div>
-            </div>
-        </div>        
+            </div> 
+        </div>  
     </header>
 
     <div class="floating-icons">
@@ -346,10 +329,8 @@
             </div>
             <div class="col-md-4 mb-4 mt-5 mt-md-0 text-md-end">
                 <h4 class="fw-bold">تواصل معنا</h4>
-                <p>62145489</p>
+                <p>00201044828371</p>
                 <p><a href="mailto:info@bloomregime.com">info@bloomregime.com</a></p>
-                <p>الرياض - السليمانية شارع ابن كثير</p>
-                <p>جدة - الغدادية الغربية - المركز السعودي للأعمال</p>
             </div>
             <div class="col-md-4 mb-4 mb-md-0 text-md-end">
                 <h4 class="fw-bold">البيانات القانونية</h4>
@@ -361,9 +342,10 @@
             </div>
         </div>
         <hr>
-        <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة</p>
+        <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2025 جميع الحقوق محفوظة</p>
     </div>
 </footer>
+
     <script src="js/main.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>

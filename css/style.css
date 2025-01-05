@@ -6,6 +6,7 @@
 
 body {
   font-family: "Almarai", sans-serif;
+  overflow-x: hidden;
 }
 
 .main-header {
@@ -174,7 +175,6 @@ h1 {
 }
 
 #carousel div.prev {
-  z-index: 5;
   left: 21%;
   top: 10%;
   transform: translateY(50px) translateX(-50%);
@@ -183,7 +183,6 @@ h1 {
 }
 
 #carousel div.prevLeftSecond {
-  z-index: 4;
   left: -3%;
   top: 10%;
   transform: translateY(50%) translateX(-50%);
@@ -192,7 +191,6 @@ h1 {
 }
 
 #carousel div.selected {
-  z-index: 10;
   left: 48.6%;
   top: 10px;
   transform: translateY(0px) translateX(-50%);
@@ -201,7 +199,6 @@ h1 {
 }
 
 #carousel div.next {
-  z-index: 5;
   left: 76.7%;
   top: 10%;
   transform: translateY(50px) translateX(-50%);
@@ -210,7 +207,6 @@ h1 {
 }
 
 #carousel div.nextRightSecond {
-  z-index: 4;
   left: 101.8%;
   top: 10%;
   transform: translateY(50%) translateX(-50%);
@@ -219,7 +215,6 @@ h1 {
   height: 24vw;
 }
 
-/*previous or next buttons css*/
 
 .buttons {
   width: 70%;
@@ -612,3 +607,21 @@ a {
   flex-shrink: 0;
   height: 1px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sticky .logo {
+  height: 100px;
+  align-content: center;
+}
+
+.sticky .logo a img {
+  height: 50px;
+ }
