@@ -29,9 +29,7 @@ const $$ = str => document.querySelectorAll(str);
             let selected = el;
 
             if (typeof el === "string") {
-            console.log(`got string: ${el}`);
                 selected = (el == "next") ? $(".selected").nextElementSibling : $(".selected").previousElementSibling;
-                console.dir(selected);
             }
 
             let curpos = parseInt(app.selected.dataset.pos);
@@ -55,12 +53,11 @@ const $$ = str => document.querySelectorAll(str);
                 app.carousel.reorder();
             }
 
-
             app.selected = selected;
-            let next = selected.nextElementSibling;// ? selected.nextElementSibling : selected.parentElement.firstElementChild;
-            var prev = selected.previousElementSibling; // ? selected.previousElementSibling : selected.parentElement.lastElementChild;
-            var prevSecond = prev ? prev.previousElementSibling : selected.parentElement.lastElementChild;
-            var nextSecond = next ? next.nextElementSibling : selected.parentElement.firstElementChild;
+            let next = selected.nextElementSibling || selected.parentElement.firstElementChild;
+            let prev = selected.previousElementSibling || selected.parentElement.lastElementChild;
+            let prevSecond = prev.previousElementSibling || selected.parentElement.lastElementChild;
+            let nextSecond = next.nextElementSibling || selected.parentElement.firstElementChild;
 
             selected.className = '';
             selected.classList.add("selected");
@@ -73,26 +70,19 @@ const $$ = str => document.querySelectorAll(str);
 
             app.carousel.nextAll(nextSecond).forEach(item=>{ item.className = ''; item.classList.add('hideRight') });
             app.carousel.prevAll(prevSecond).forEach(item=>{ item.className = ''; item.classList.add('hideLeft') });
-
         },
         nextAll: function(el) {
             let els = [];
-
             if (el) {
                 while (el = el.nextElementSibling) { els.push(el); }
             }
-
             return els;
-
         },
         prevAll: function(el) {
             let els = [];
-
             if (el) {
                 while (el = el.previousElementSibling) { els.push(el); }
             }
-
-
             return els;
         },
         keypress: function(e) {
@@ -100,11 +90,9 @@ const $$ = str => document.querySelectorAll(str);
                 case 37: // left
                     app.carousel.move('prev');
                     break;
-
                 case 39: // right
                     app.carousel.move('next');
                     break;
-
                 default:
                     return;
             }
@@ -112,14 +100,11 @@ const $$ = str => document.querySelectorAll(str);
             return false;
         },
         select: function(e) {
-        console.log(`select: ${e}`);
             let tgt = e.target;
             while (!tgt.parentElement.classList.contains('carousel')) {
                 tgt = tgt.parentElement;
             }
-
             app.carousel.move(tgt);
-
         },
         previous: function(e) {
             app.carousel.move('prev');
@@ -127,61 +112,71 @@ const $$ = str => document.querySelectorAll(str);
         next: function(e) {
             app.carousel.move('next');
         },
-        doDown: function(e) {
-        console.log(`down: ${e.x}`);
-            app.carousel.state.downX = e.x;
+        touchStart: function(e) {
+            if (e.touches && e.touches.length === 1) {
+                app.carousel.state.downX = e.touches[0].clientX;
+                app.carousel.state.startX = e.touches[0].clientX;
+                app.carousel.state.isSwiping = true;
+                $("#carousel").style.transition = 'none'; // Disable transition during swipe
+            }
         },
-        doUp: function(e) {
-        console.log(`up: ${e.x}`);
-            let direction = 0,
-                velocity = 0;
+        touchMove: function(e) {
+            if (app.carousel.state.isSwiping && e.touches && e.touches.length === 1) {
+                let currentX = e.touches[0].clientX;
+                let diff = currentX - app.carousel.state.startX;
+                $("#carousel").style.transform = `translateX(${diff}px)`; // Move carousel during swipe
+            }
+        },
+        touchEnd: function(e) {
+            if (app.carousel.state.isSwiping) {
+                let currentX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : e.clientX;
+                let diff = currentX - app.carousel.state.downX;
+                let threshold = 50; // Minimum swipe distance to trigger a move
 
-            if (app.carousel.state.downX) {
-                direction = (app.carousel.state.downX > e.x) ? -1 : 1;
-                velocity = app.carousel.state.downX - e.x;
+                if (Math.abs(diff) > threshold) {
+                    if (diff < 0) {
+                        app.carousel.move('next'); // Swipe left
+                    } else {
+                        app.carousel.move('prev'); // Swipe right
+                    }
+                }
 
-                if (Math.abs(app.carousel.state.downX - e.x) < 10) {
-                    app.carousel.select(e);
-                    return false;
-                }
-                if (direction === -1) {
-                    app.carousel.move('next');
-                } else {
-                    app.carousel.move('prev');
-                }
+                // Reset carousel position and enable transition
+                $("#carousel").style.transform = 'translateX(0)';
+                $("#carousel").style.transition = 'transform 0.3s ease';
+
+                app.carousel.state.isSwiping = false;
                 app.carousel.state.downX = 0;
             }
         },
         init: function() {
             document.addEventListener("keydown", app.carousel.keypress);
-           // $('#carousel').addEventListener("click", app.carousel.select, true);
-            $("#carousel").addEventListener("mousedown", app.carousel.doDown);
-            $("#carousel").addEventListener("touchstart", app.carousel.doDown);
-            $("#carousel").addEventListener("mouseup", app.carousel.doUp);
-            $("#carousel").addEventListener("touchend", app.carousel.doup);
+            $('#carousel').addEventListener("click", app.carousel.select, true);
+            $("#carousel").addEventListener("touchstart", app.carousel.touchStart);
+            $("#carousel").addEventListener("touchmove", app.carousel.touchMove);
+            $("#carousel").addEventListener("touchend", app.carousel.touchEnd);
 
             app.carousel.reorder();
             $('#prev').addEventListener("click", app.carousel.previous);
             $('#next').addEventListener("click", app.carousel.next);
             app.selected = $(".selected");
-
         },
-        state: {}
-
-    }
+        state: {
+            downX: 0,
+            startX: 0,
+            isSwiping: false
+        }
+    };
     app.carousel.init();
 })();
 
 window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
-    const parent = navbar.parentElement;
     if (window.scrollY > 50) {
         navbar.classList.add("sticky");
         navbar.classList.add("px-3");
-        parent.classList.remove("container-fluid");
     } else {
         navbar.classList.remove("sticky");
         navbar.classList.remove("px-3");
-        parent.classList.add("container-fluid");
     }
 });

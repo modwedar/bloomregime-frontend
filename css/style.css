@@ -34,7 +34,7 @@ body {
 
 .nav-bar {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .nav-link {
@@ -382,6 +382,13 @@ a {
   padding: 5px 0;
 }
 
+.carousel-inner {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  transition: transform 0.5s ease;
+}
 
 @media (max-width: 1398px) {
   .green-container {
@@ -401,6 +408,7 @@ a {
     height: 620px;
   }
 }
+
 
 
 @media (max-width: 1110px) {
