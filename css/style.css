@@ -151,15 +151,17 @@ h1 {
 #item_5,
 #item_6,
 #item_7,
-#item_8,
-.fcard {
+#item_8 {
   background-color: white;
   border-radius: 50px;
   box-shadow: 0px 0px 45px 2px rgba(0, 0, 0, 0.1);
 }
 
 .fcard {
-  height: 500px!important;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1);
+  height: 500px !important;
 }
 
 #carousel div.hideLeft {
@@ -594,16 +596,19 @@ a {
 }
 
 @keyframes bounce {
-  0%, 100% {
-      transform: translateY(0);
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
+
   50% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
 .offcanvas {
-  width: 100%!important;
+  width: 100% !important;
 }
 
 .offcanvas-header {
@@ -622,12 +627,12 @@ a {
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .sticky .logo {
@@ -637,4 +642,51 @@ a {
 
 .sticky .logo a img {
   height: 50px;
- }
+}
+
+.modal {
+  --bs-modal-width: 80% !important;
+  --bs-border-radius-lg: 1rem;
+  --bs-modal-padding: 2rem;
+}
+
+.modal-body {
+  width: 80%;
+  margin: auto;
+}
+
+.bubble-r-box {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  margin: 40px auto;
+}
+
+.bubble-r-box input {
+  width: 100%;
+  height: 45px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  border: 1.5px solid rgb(173 170 170);
+  background: rgb(252, 252, 252);
+  border-radius: 15px;
+  font-weight: 500;
+  padding: 35px;
+  outline: none;
+}
+
+.bubble-element.Text {
+  position: absolute;
+  top: -10px;
+  right: 35px;
+  z-index: 4;
+  background-color: rgb(255, 255, 255);
+  font-size: 17px;
+  color: black;
+  padding: 0 5px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
