@@ -109,28 +109,14 @@ const $$ = str => document.querySelectorAll(str);
         },
         previous: function (e) {
             if (window.innerWidth <= 991) {
-                if (!this.swiper) {
-                    const swiperElement = document.getElementById('mySwiper');
-                    this.swiper = new Swiper(swiperElement, {
-                        spaceBetween: 32,
-                        grabCursor: true,
-                    });
-                }
-                this.swiper.slidePrev();
+                app.carousel.swiper.slidePrev();
             } else {
                 app.carousel.move('prev');
             }
         },
         next: function (e) {
             if (window.innerWidth <= 991) {
-                if (!this.swiper) {
-                    const swiperElement = document.getElementById('mySwiper');
-                    this.swiper = new Swiper(swiperElement, {
-                        spaceBetween: 32,
-                        grabCursor: true,
-                    });
-                }
-                this.swiper.slideNext();
+                app.carousel.swiper.slideNext();
             } else {
                 app.carousel.move('next');
             }
@@ -143,6 +129,13 @@ const $$ = str => document.querySelectorAll(str);
             $('#prev').addEventListener("click", app.carousel.previous);
             $('#next').addEventListener("click", app.carousel.next);
             app.selected = $(".selected");
+            if (!app.carousel.swiper) {
+                const swiperElement = document.getElementById('mySwiper');
+                app.carousel.swiper = new Swiper(swiperElement, {
+                    spaceBetween: 32,
+                    grabCursor: true,
+                });
+            }
         },
         state: {
             downX: 0,
