@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
 </head>
 
 <body>
@@ -24,38 +25,92 @@
                     <h4 class="fw-bold text-center">اشترك مع <span style="color: #3CB57A;">بلوم ريجيم!</span></h4>
                     <form>
                         <div class="bubble-r-box">
-                            <div class="input-group-btn">
-                                <button type="button" id="btn-country" class="btn btn-default  f16 dropdown-toggle"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span
-                                        class="flag ad"></span><span
-                                        class="btn-cc">&nbsp;&nbsp;+376&nbsp;&nbsp;</span><span
-                                        class="caret"></span></button>
+                            <div class="dropdown input-group-btn">
+                                <button type="button" id="btn-country" class="btn btn-default f16 dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="btn-cc">20+</span>
+                                    <span class="fi fi-eg fis"></span>
+                                </button>
                                 <ul class="dropdown-menu f16">
                                     <li>
-                                        <a>
-                                            <i id="33" class="callingCode" style="margin-left: 10px;">+33</i>
+                                        <a href="#" class="country-option" data-code="966" data-flag="fi-sa">
+                                            <i id="33" class="callingCode" style="margin-left: 10px;">966+</i>
+                                            <span class="fi fi-sa fis"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="country-option" data-code="1" data-flag="fi-us">
+                                            <i id="1" class="callingCode" style="margin-left: 10px;">1+</i>
+                                            <span class="fi fi-us fis"></span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            <input type="text" placeholder="Input text">
+                            <input type="text" id="phone-number" placeholder="1011111111"
+                                style="padding-left: 6rem; text-align: left;">
                             <div class="bubble-element Text">
                                 <div class="content">رقم الجوال</div>
                             </div>
                         </div>
                         <div class="bubble-r-box">
-                            <input type="text" placeholder="Input text">
+                            <input type="text" placeholder="محمد عبدالله">
                             <div class="bubble-element Text">
                                 <div class="content">اسم المستخدم</div>
                             </div>
                         </div>
                         <div class="bubble-r-box">
-                            <input type="text" placeholder="Input text">
+                            <input type="password" placeholder="********">
                             <div class="bubble-element Text">
                                 <div class="content">كلمة المرور</div>
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center">
+                            <button id="signup-next" class="btn btn-submit my-btn w-50 mt-3">التالي</button>
+                        </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content align-items-center">
+                <div class="modal-body d-flex flex-column align-items-center py-5">
+                    <h4 class="fw-bold text-center">تَحقّق</h4>
+                    <p class="text-center">سيتم ارسال رمز اليك بالرجاء ادخاله</p>
+                    <div id="otp-input" class="font-h2-strong">
+                        <input class="font-h2-strong" placeholder="" type="number" step="1" min="0" max="9" autocomplete="no" pattern="\d*" />
+                        <input class="font-h2-strong" placeholder="" type="number" step="1" min="0" max="9" autocomplete="no" pattern="\d*" />
+                        <input class="font-h2-strong" placeholder="" type="number" step="1" min="0" max="9" autocomplete="no" pattern="\d*" />
+                        <input class="font-h2-strong" placeholder="" type="number" step="1" min="0" max="9" autocomplete="no" pattern="\d*" />
+                        <input class="font-h2-strong" placeholder="" type="number" step="1" min="0" max="9" autocomplete="no" pattern="\d*" />
+                        <input class="font-h2-strong" placeholder="" type="number" step="1" min="0" max="9" autocomplete="no" pattern="\d*" />
+                        <input id="otp-value" placeholder="" type="hidden" name="otp" />
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center w-25 mt-3">
+                        <div class="d-flex align-items-center">
+                            <span class="ms-2">لم تستلم رمز؟</span>
+                            <a href="#" class="custom-link">أعد الإرسال</a>
+                        </div>
+                        <span id="timer">00:59</span>
+                    </div>
+
+                    <button id="otp-next" class="btn btn-submit my-btn w-25 mt-3">التالي</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="doneModal" tabindex="-1" aria-labelledby="doneModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content align-items-center">
+                <div class="modal-body d-flex flex-column align-items-center py-5">
+                    <img src="assets/images/ph_seal-check.svg" alt="Done">
+                    <h4 class="fw-bold text-center">تم التحقق من رقم الجوال بنجاح! </h4>
+                    <p>أهلا بك في بلوم ريجيم ، ابدأ رحلتك الأن ( سيقوم أحد المختصين بالتواصل معك قريباً لتحديد البرنامج الغذائى اللازم لك ) </p>
                 </div>
             </div>
         </div>
@@ -463,7 +518,7 @@
                             <label for="message" class="form-label">اكتب استفسارك</label>
                             <textarea class="form-control" id="message" rows="4" placeholder="اكتب التفاصيل"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-submit send-btn w-100">إرسال</button>
+                        <button type="submit" class="btn btn-submit my-btn w-100">إرسال</button>
                     </form>
                 </div>
             </div>
@@ -502,10 +557,161 @@
         </div>
     </footer>
 
+    
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/swiper.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const $ = str => document.querySelector(str);
+        const $$ = str => document.querySelectorAll(str);
+
+        (function () {
+            if (!window.app) {
+                window.app = {};
+            }
+            app.carousel = {
+                swiper: null,
+                removeClass: function (el, classname = '') {
+                    if (el) {
+                        if (classname === '') {
+                            el.className = '';
+                        } else {
+                            el.classList.remove(classname);
+                        }
+                        return el;
+                    }
+                    return;
+                },
+                reorder: function () {
+                    let childcnt = $("#carousel").children.length;
+                    let childs = $("#carousel").children;
+
+                    for (let j = 0; j < childcnt; j++) {
+                        childs[j].dataset.pos = j;
+                    }
+                },
+                move: function (el) {
+                    let selected = el;
+
+                    if (typeof el === "string") {
+                        selected = (el == "next") ? $(".selected").nextElementSibling : $(".selected").previousElementSibling;
+                    }
+
+                    let curpos = parseInt(app.selected.dataset.pos);
+                    let tgtpos = parseInt(selected.dataset.pos);
+
+                    let cnt = curpos - tgtpos;
+                    let dir = (cnt < 0) ? -1 : 1;
+                    let shift = Math.abs(cnt);
+
+                    for (let i = 0; i < shift; i++) {
+                        let el = (dir == -1) ? $("#carousel").firstElementChild : $("#carousel").lastElementChild;
+
+                        if (dir == -1) {
+                            el.dataset.pos = $("#carousel").children.length;
+                            $('#carousel').append(el);
+                        } else {
+                            el.dataset.pos = 0;
+                            $('#carousel').prepend(el);
+                        }
+
+                        app.carousel.reorder();
+                    }
+
+                    app.selected = selected;
+                    let next = selected.nextElementSibling || selected.parentElement.firstElementChild;
+                    let prev = selected.previousElementSibling || selected.parentElement.lastElementChild;
+                    let prevSecond = prev.previousElementSibling || selected.parentElement.lastElementChild;
+                    let nextSecond = next.nextElementSibling || selected.parentElement.firstElementChild;
+
+                    selected.className = '';
+                    selected.classList.add("selected");
+
+                    app.carousel.removeClass(prev).classList.add('prev');
+                    app.carousel.removeClass(next).classList.add('next');
+
+                    app.carousel.removeClass(nextSecond).classList.add("nextRightSecond");
+                    app.carousel.removeClass(prevSecond).classList.add("prevLeftSecond");
+
+                    app.carousel.nextAll(nextSecond).forEach(item => { item.className = ''; item.classList.add('hideRight') });
+                    app.carousel.prevAll(prevSecond).forEach(item => { item.className = ''; item.classList.add('hideLeft') });
+                },
+                nextAll: function (el) {
+                    let els = [];
+                    if (el) {
+                        while (el = el.nextElementSibling) { els.push(el); }
+                    }
+                    return els;
+                },
+                prevAll: function (el) {
+                    let els = [];
+                    if (el) {
+                        while (el = el.previousElementSibling) { els.push(el); }
+                    }
+                    return els;
+                },
+                keypress: function (e) {
+                    switch (e.which) {
+                        case 37: // left
+                            app.carousel.move('prev');
+                            break;
+                        case 39: // right
+                            app.carousel.move('next');
+                            break;
+                        default:
+                            return;
+                    }
+                    e.preventDefault();
+                    return false;
+                },
+                select: function (e) {
+                    let tgt = e.target;
+                    while (!tgt.parentElement.classList.contains('carousel')) {
+                        tgt = tgt.parentElement;
+                    }
+                    app.carousel.move(tgt);
+                },
+                previous: function (e) {
+                    if (window.innerWidth <= 991) {
+                        app.carousel.swiper.slidePrev();
+                    } else {
+                        app.carousel.move('prev');
+                    }
+                },
+                next: function (e) {
+                    if (window.innerWidth <= 991) {
+                        app.carousel.swiper.slideNext();
+                    } else {
+                        app.carousel.move('next');
+                    }
+                },
+                init: function () {
+                    document.addEventListener("keydown", app.carousel.keypress);
+                    $('#carousel').addEventListener("click", app.carousel.select, true);
+
+                    app.carousel.reorder();
+                    $('#prev').addEventListener("click", app.carousel.previous);
+                    $('#next').addEventListener("click", app.carousel.next);
+                    app.selected = $(".selected");
+                    if (!app.carousel.swiper) {
+                        const swiperElement = document.getElementById('mySwiper');
+                        app.carousel.swiper = new Swiper(swiperElement, {
+                            spaceBetween: 32,
+                            grabCursor: true,
+                        });
+                    }
+                },
+                state: {
+                    downX: 0,
+                    startX: 0,
+                    isSwiping: false
+                }
+            };
+            app.carousel.init();
+        })();
+    </script>
 </body>
 
 </html>

@@ -327,7 +327,7 @@ a {
   text-align: center;
 }
 
-.send-btn:hover {
+.my-btn:hover {
   background-color: var(--main-green-hover);
   color: #fff;
 }
@@ -337,7 +337,7 @@ a {
   border-radius: 15px;
 }
 
-.send-btn {
+.my-btn {
   background-color: var(--main-green);
   color: #fff;
   font-weight: bold;
@@ -676,11 +676,12 @@ a {
   font-weight: 500;
   padding: 35px;
   outline: none;
+  text-align: right;
 }
 
 .bubble-element.Text {
   position: absolute;
-  top: -10px;
+  top: 0;
   right: 35px;
   z-index: 4;
   background-color: rgb(255, 255, 255);
@@ -689,4 +690,98 @@ a {
   padding: 0 5px;
   line-height: 1.4;
   white-space: nowrap;
+}
+
+.input-group-btn {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  top: 45%;
+}
+
+.fi {
+  border-radius: 3px;
+  font-size: 25px!important;
+}
+
+.btn-cc {
+  font-size: 16px;
+}
+
+.btn {
+  border: none;
+}
+
+.dropdown-menu {
+  padding: 10px;
+}
+
+.input-group-btn i {
+  font-style: normal;
+}
+
+.input-group-btn a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 550px) {
+  .modal-body {
+    width: 100%;
+  }
+}
+
+#otp-input {
+  display: flex;
+  column-gap: 8px;
+}
+
+#otp-input input {
+  text-align: center;
+  padding: 10px 8px 10px 8px;
+  border: 1px solid #adadad;
+  border-radius: 4px;
+  outline: none;
+  height: 64px;
+  width: 50px;
+}
+
+#otp-input input:focus {
+  border: 1px solid #497e76;
+}
+
+#otp-input input:focus::placeholder {
+  color: transparent;
+}
+
+#otp-input input::-webkit-outer-spin-button,
+#otp-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#otp-input input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+
+@media screen and (max-width: 321px) {
+  #otp-input input {
+    height: 42px;
+    width: 33px;
+  }
+
+  #otp-next {
+    width: 50%!important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #otp-input input {
+    height: 52px;
+    width: 41px;
+  }
 }

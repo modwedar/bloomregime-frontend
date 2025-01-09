@@ -1,151 +1,3 @@
-const $ = str => document.querySelector(str);
-const $$ = str => document.querySelectorAll(str);
-
-(function () {
-    if (!window.app) {
-        window.app = {};
-    }
-    app.carousel = {
-        swiper: null,
-        removeClass: function (el, classname = '') {
-            if (el) {
-                if (classname === '') {
-                    el.className = '';
-                } else {
-                    el.classList.remove(classname);
-                }
-                return el;
-            }
-            return;
-        },
-        reorder: function () {
-            let childcnt = $("#carousel").children.length;
-            let childs = $("#carousel").children;
-
-            for (let j = 0; j < childcnt; j++) {
-                childs[j].dataset.pos = j;
-            }
-        },
-        move: function (el) {
-            let selected = el;
-
-            if (typeof el === "string") {
-                selected = (el == "next") ? $(".selected").nextElementSibling : $(".selected").previousElementSibling;
-            }
-
-            let curpos = parseInt(app.selected.dataset.pos);
-            let tgtpos = parseInt(selected.dataset.pos);
-
-            let cnt = curpos - tgtpos;
-            let dir = (cnt < 0) ? -1 : 1;
-            let shift = Math.abs(cnt);
-
-            for (let i = 0; i < shift; i++) {
-                let el = (dir == -1) ? $("#carousel").firstElementChild : $("#carousel").lastElementChild;
-
-                if (dir == -1) {
-                    el.dataset.pos = $("#carousel").children.length;
-                    $('#carousel').append(el);
-                } else {
-                    el.dataset.pos = 0;
-                    $('#carousel').prepend(el);
-                }
-
-                app.carousel.reorder();
-            }
-
-            app.selected = selected;
-            let next = selected.nextElementSibling || selected.parentElement.firstElementChild;
-            let prev = selected.previousElementSibling || selected.parentElement.lastElementChild;
-            let prevSecond = prev.previousElementSibling || selected.parentElement.lastElementChild;
-            let nextSecond = next.nextElementSibling || selected.parentElement.firstElementChild;
-
-            selected.className = '';
-            selected.classList.add("selected");
-
-            app.carousel.removeClass(prev).classList.add('prev');
-            app.carousel.removeClass(next).classList.add('next');
-
-            app.carousel.removeClass(nextSecond).classList.add("nextRightSecond");
-            app.carousel.removeClass(prevSecond).classList.add("prevLeftSecond");
-
-            app.carousel.nextAll(nextSecond).forEach(item => { item.className = ''; item.classList.add('hideRight') });
-            app.carousel.prevAll(prevSecond).forEach(item => { item.className = ''; item.classList.add('hideLeft') });
-        },
-        nextAll: function (el) {
-            let els = [];
-            if (el) {
-                while (el = el.nextElementSibling) { els.push(el); }
-            }
-            return els;
-        },
-        prevAll: function (el) {
-            let els = [];
-            if (el) {
-                while (el = el.previousElementSibling) { els.push(el); }
-            }
-            return els;
-        },
-        keypress: function (e) {
-            switch (e.which) {
-                case 37: // left
-                    app.carousel.move('prev');
-                    break;
-                case 39: // right
-                    app.carousel.move('next');
-                    break;
-                default:
-                    return;
-            }
-            e.preventDefault();
-            return false;
-        },
-        select: function (e) {
-            let tgt = e.target;
-            while (!tgt.parentElement.classList.contains('carousel')) {
-                tgt = tgt.parentElement;
-            }
-            app.carousel.move(tgt);
-        },
-        previous: function (e) {
-            if (window.innerWidth <= 991) {
-                app.carousel.swiper.slidePrev();
-            } else {
-                app.carousel.move('prev');
-            }
-        },
-        next: function (e) {
-            if (window.innerWidth <= 991) {
-                app.carousel.swiper.slideNext();
-            } else {
-                app.carousel.move('next');
-            }
-        },
-        init: function () {
-            document.addEventListener("keydown", app.carousel.keypress);
-            $('#carousel').addEventListener("click", app.carousel.select, true);
-
-            app.carousel.reorder();
-            $('#prev').addEventListener("click", app.carousel.previous);
-            $('#next').addEventListener("click", app.carousel.next);
-            app.selected = $(".selected");
-            if (!app.carousel.swiper) {
-                const swiperElement = document.getElementById('mySwiper');
-                app.carousel.swiper = new Swiper(swiperElement, {
-                    spaceBetween: 32,
-                    grabCursor: true,
-                });
-            }
-        },
-        state: {
-            downX: 0,
-            startX: 0,
-            isSwiping: false
-        }
-    };
-    app.carousel.init();
-})();
-
 window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
     if (window.scrollY > 50) {
@@ -155,4 +7,164 @@ window.addEventListener("scroll", function () {
         navbar.classList.remove("sticky");
         navbar.classList.remove("px-3");
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const countryOptions = document.querySelectorAll('.country-option');
+    const btnCountry = document.getElementById('btn-country');
+    const btnCc = btnCountry.querySelector('.btn-cc');
+    const flagSpan = btnCountry.querySelector('.fi');
+    const phoneNumberInput = document.getElementById('phone-number');
+    const signUpNextButton = document.getElementById('signup-next');
+    const otpNextButton = document.getElementById('otp-next');
+    const OTPContainer = document.querySelector("#otp-input");
+    const OTPValueContainer = document.querySelector("#otp-value");
+    const timerElement = document.getElementById('timer');
+    const otpModal = document.getElementById('otpModal');
+
+    countryOptions.forEach(option => {
+        option.addEventListener('click', function(event) {
+            event.preventDefault();
+            const code = this.getAttribute('data-code');
+            const flag = this.getAttribute('data-flag');
+
+            // Update the button text and flag
+            btnCc.textContent = `${code}+`;
+            flagSpan.className = `fi ${flag} fis`;
+
+            // Update the input field placeholder with the new country code
+            phoneNumberInput.placeholder = `${code}${phoneNumberInput.placeholder}`;
+        });
+    });
+
+    signUpNextButton.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const signupModal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
+        signupModal.hide();
+
+        const modal = new bootstrap.Modal(document.getElementById('otpModal'));
+        modal.show();
+    });
+
+    otpNextButton.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const otpModal = bootstrap.Modal.getInstance(document.getElementById('otpModal'));
+        otpModal.hide();
+
+        const modal = new bootstrap.Modal(document.getElementById('doneModal'));
+        modal.show();
+    });
+
+    const firstInput = OTPContainer.querySelector(".font-h2-strong");
+    firstInput.focus();
+
+    otpModal.addEventListener('show.bs.modal', function () {
+        let timeLeft = 59;
+        timerElement.textContent = `00:${timeLeft.toString().padStart(2, '0')}`;
+
+        const timerInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = `00:${timeLeft.toString().padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timerElement.textContent = "00:00";
+            }
+        }, 1000);
+    });
+
+
+    // OTP Logic
+    const updateValue = (inputs) => {
+        OTPValueContainer.value = Array.from(inputs).reduce((acc, curInput) => acc.concat(curInput.value ? curInput.value : "*"), "");
+    };
+
+    const isValidInput = (inputValue) => {
+        return Number(inputValue) === 0 && inputValue !== "0" ? false : true;
+    };
+
+    const setInputValue = (inputElement, inputValue) => {
+        inputElement.value = inputValue;
+    };
+
+    const resetInput = (inputElement) => {
+        setInputValue(inputElement, "");
+    };
+
+    const focusNext = (inputs, curIndex) => {
+        const nextElement = curIndex < inputs.length - 1 ? inputs[curIndex + 1] : inputs[curIndex];
+
+        nextElement.focus();
+        nextElement.select();
+    };
+
+    const focusPrev = (inputs, curIndex) => {
+        const prevElement = curIndex > 0 ? inputs[curIndex - 1] : inputs[curIndex];
+
+        prevElement.focus();
+        prevElement.select();
+    };
+
+    const focusIndex = (inputs, index) => {
+        const element = index < inputs.length - 1 ? inputs[index] : inputs[inputs.length - 1];
+
+        element.focus();
+        element.select();
+    };
+
+    const handleValidMultiInput = (inputElement, inputValue, curIndex, inputs) => {
+        const inputLength = inputValue.length;
+        const numInputs = inputs.length;
+
+        const endIndex = Math.min(curIndex + inputLength - 1, numInputs - 1);
+        const inputsToChange = Array.from(inputs).slice(curIndex, endIndex + 1);
+        inputsToChange.forEach((input, index) => setInputValue(input, inputValue[index]));
+        focusIndex(inputs, endIndex);
+    };
+
+    const handleInput = (inputElement, inputValue, curIndex, inputs) => {
+        if (!isValidInput(inputValue)) return handleInvalidInput(inputElement);
+        if (inputValue.length === 1) handleValidSingleInput(inputElement, inputValue, curIndex, inputs);
+        else handleValidMultiInput(inputElement, inputValue, curIndex, inputs);
+    };
+
+    const handleValidSingleInput = (inputElement, inputValue, curIndex, inputs) => {
+        setInputValue(inputElement, inputValue.slice(-1));
+        focusNext(inputs, curIndex);
+    };
+
+    const handleInvalidInput = (inputElement) => {
+        resetInput(inputElement);
+    };
+
+    const handleKeyDown = (event, key, inputElement, curIndex, inputs) => {
+        if (key === "Delete") {
+            resetInput(inputElement);
+            focusPrev(inputs, curIndex);
+        }
+        if (key === "ArrowLeft") {
+            event.preventDefault();
+            focusPrev(inputs, curIndex);
+        }
+        if (key === "ArrowRight") {
+            event.preventDefault();
+            focusNext(inputs, curIndex);
+        }
+    };
+    const handleKeyUp = (event, key, inputElement, curIndex, inputs) => {
+        if (key === "Backspace") focusPrev(inputs, curIndex);
+    };
+
+    const inputs = OTPContainer.querySelectorAll("input:not(#otp-value)");
+    inputs.forEach((input, index) => {
+        input.addEventListener("input", (e) => handleInput(input, e.target.value, index, inputs));
+
+        input.addEventListener("keydown", (e) => handleKeyDown(e, e.key, input, index, inputs));
+
+        input.addEventListener("keyup", (e) => handleKeyUp(e, e.key, input, index, inputs));
+
+        input.addEventListener("focus", (e) => e.target.select());
+    });
 });
