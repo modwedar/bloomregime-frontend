@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const modal = new bootstrap.Modal(document.getElementById('doneModal'));
         modal.show();
+
+        setTimeout(function() {
+            window.location.href = '/followups.html';
+        }, 2000);
     });
 
     const firstInput = OTPContainer.querySelector(".font-h2-strong");
