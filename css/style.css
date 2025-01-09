@@ -785,3 +785,9 @@ a {
     width: 41px;
   }
 }
+
+@media (min-width: 768px) {
+  .not-recived {
+      width: 40% !important;
+  }
+}
