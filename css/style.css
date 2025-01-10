@@ -517,13 +517,16 @@ a {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 321px) {
   .logo img {
     height: 50px;
   }
 
   .btn-green {
     padding: 10px 8px;
+  }
+  p {
+    font-size: medium;
   }
 }
 

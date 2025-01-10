@@ -16,15 +16,22 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <style>
-        .privacy-section p {
-            text-align: justify;
-            font-size: 22px;
-            margin-bottom: 10vh;
+        .progress-container {
+            display: flex;
+            gap: 2%;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .privacy-section h3 {
-            margin-bottom: 20px;
-            font-weight: bold;
+        .progress-piece {
+            flex: 1;
+            height: 1vw;
+            background-color: var(--main-gray);
+        }
+
+        .progress-piece.complete {
+            background-color: var(--main-green);
         }
     </style>
 </head>
@@ -61,8 +68,7 @@
                             </li>
                             <li class="nav-item">
                                 <i class="ri-apps-fill" style="font-size: larger;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60"
-                                    href="#">نظامي</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#">نظامي</a>
                             </li>
                             <li class="nav-item">
                                 <i class="ri-sticky-note-add-fill" style="font-size: larger;"></i>
@@ -75,7 +81,8 @@
                             <div class="separator"></div>
                             <li class="nav-item">
                                 <i class="ri-logout-box-line" style="font-size: larger; color: #E70B0B;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#" style="color: #E70B0B!important;">تسجيل الخروج</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#"
+                                    style="color: #E70B0B!important;">تسجيل الخروج</a>
                             </li>
                         </ul>
                     </div>
@@ -95,22 +102,82 @@
                 <div class="d-flex align-items-center">
                     <div class="position-relative d-none d-md-block" style="margin-left: 15px;">
                         <img src="assets/images/bell-icon.svg" style="width: 22px;">
-                        <span class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill d-flex align-items-center justify-content-center" style="font-size: 10px; width: 18px; height: 18px; padding: 0;">
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill d-flex align-items-center justify-content-center"
+                            style="font-size: 10px; width: 18px; height: 18px; padding: 0;">
                             3
                         </span>
-                    </div>             
+                    </div>
                     <button class="btn btn-green ms-2 d-flex align-items-center justify-content-between w-100">
-                        <img src="assets/images/guidance_user-1.svg" style="width: 24px; height: 24px; border-radius: 50%; margin-left: 5px;">
+                        <img src="assets/images/guidance_user-1.svg"
+                            style="width: 24px; height: 24px; border-radius: 50%; margin-left: 5px;">
 
                         <span>رنا البسيوني</span>
 
-                        <i class="ri-arrow-down-s-line"></i>                    
+                        <i class="ri-arrow-down-s-line"></i>
                     </button>
                     <a href="#"><span class="d-none d-md-block me-2">EN</span></a>
                 </div>
             </div>
         </div>
     </header>
+
+    <section class="content py-5">
+        <div class="container">
+            <div class="row align-items-center align-items-stretch">
+                <div class="col-2">
+                    <img src="assets/images/fat.png" alt="Image 1" class="img-fluid h-100">
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-center align-items-center">
+                    <h4>رحلة فقدان الوزن</h4>
+                    <p>عدد المتابعات : 12 متابعة</p>
+                    <div class="progress-container">
+                        <div class="progress-piece complete"></div>
+                        <div class="progress-piece complete"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                    </div>
+                    <div class="w-100 d-flex justify-content-between" style="max-width: 600px">
+                        <span>90 كجم</span>
+                        <span>60 كجم</span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="assets/images/thin.png" alt="Image 2" class="img-fluid h-100">
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">صفحة واحد</div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">صفحة 2</div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+              </div>
+        </div>
+    </section>
 
     <footer class="footer mt-5">
         <div class="container">
@@ -134,8 +201,8 @@
                     <h4 class="fw-bold">البيانات القانونية</h4>
                     <ul class="list-unstyled">
                         <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                            <li><a href="terms-and-conditions.html">سياسة الاستخدام</a></li>
-                            <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
+                        <li><a href="terms-and-conditions.html">سياسة الاستخدام</a></li>
+                        <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
                     </ul>
                 </div>
             </div>
@@ -144,6 +211,7 @@
         </div>
     </footer>
 
+    <!-- <script src="js/main.js"></script> -->
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
