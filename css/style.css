@@ -91,6 +91,12 @@ h1 {
   }
 }
 
+.text-wrap {
+  white-space: normal;
+  display: block;
+  width: 100%;
+}
+
 .green-container {
   position: absolute;
   bottom: -310px;
