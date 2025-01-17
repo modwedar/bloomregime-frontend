@@ -351,6 +351,21 @@ a {
   border-radius: 15px;
 }
 
+.bordered-btn {
+  background-color: white;
+  color: var(--main-green);
+  font-weight: bold;
+  padding: 16px 24px;
+  border-radius: 15px;
+  border: 2px solid var(--main-green)!important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bordered-btn:hover {
+  background-color: var(--main-green);
+  color: white;
+}
+
 .footer {
   background-color: var(--main-green);
   color: white;
