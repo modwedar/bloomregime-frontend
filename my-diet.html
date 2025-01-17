@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظامي - بلوم ريجيم</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <style>
+        .progress-container {
+            display: flex;
+            gap: 2%;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .progress-piece {
+            flex: 1;
+            height: 1vw;
+            background-color: var(--main-gray);
+        }
+
+        .progress-piece.complete {
+            background-color: var(--main-green);
+        }
+
+        .my-tab {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .my-tab-link {
+            padding: 20px 100px;
+            border-radius: 72px !important;
+            color: white;
+            font-weight: normal;
+            background-color: white;
+            border-color: var(--main-green) !important;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background-color: var(--main-green) !important;
+            color: white !important;
+        }
+
+        .tab-btn {
+            background-color: white;
+            color: black;
+            padding: 16px 5vw;
+            border-radius: 30px;
+            border: 1px solid var(--main-green);
+        }
+
+        .followup-btn {
+            background-color: white;
+            color: #B2B2B2;
+            padding: 16px 1vw;
+            border-radius: 30px;
+            box-shadow: 0 0 12.59px rgba(0, 0, 0, 0.15);
+        }
+
+        .followup-btn.active,
+        .followup-btn:hover {
+            background-color: var(--main-green) !important;
+            color: white !important;
+        }
+
+        .followup-btn span {
+            font-size: 0.80rem;
+        }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-wrapper img {
+            display: block;
+        }
+
+        .image-wrapper .number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .followup-btn.active img {
+            filter: brightness(0) invert(1);
+        }
+
+        .followup-btn.active:hover img {
+            filter: brightness(0) invert(1);
+        }
+
+        .scrollable-tabs {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 5px;
+        }
+
+        .scrollable-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollable-tabs .nav-item {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 425px) {
+            .followup-btn {
+                max-width: 6rem;
+            }
+
+            .followup-btn h6 {
+                font-size: 14px;
+            }
+
+            .followup-btn span {
+                font-size: 10px;
+            }
+
+            .image-wrapper img {
+                display: block;
+            }
+
+            .image-wrapper img {
+                width: 25px;
+            }
+
+            .image-wrapper img {
+                width: 25px;
+            }
+
+            .image-wrapper .number {
+                font-size: 12px;
+            }
+        }
+
+        .fw-bold span {
+            font-weight: normal;
+        }
+
+        .doc-advices {
+            border: 2px dashed var(--main-green);
+            padding: 15px;
+        }
+
+        .day-tab-btn {
+            background-color: white;
+            color: black;
+            padding: 10px 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            /* تأكد من أن العرض متساوي */
+            min-width: 80px;
+            /* حدد عرضًا ثابتًا للأزرار */
+        }
+
+        .day-tab-btn.active {
+            width: 70%;
+            background-color: var(--main-green);
+            color: white !important;
+            padding: 10px 7px;
+            border-radius: 30px;
+            border: 1px solid var(--main-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            /* تأكد من أن العرض متساوي */
+            min-width: 80px;
+            /* حدد عرضًا ثابتًا للأزرار */
+        }
+
+        .day-tab-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .day-name {
+            font-size: 14px;
+        }
+
+        .day-tab-btn.active .day-tab-content div {
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--main-green);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-flex py-3">
+        <div class="container-fluid">
+            <div class="nav-bar d-flex justify-content-between align-items-center">
+                <div class="burger-menu d-md-none">
+                    <button class="btn btn-burger p-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        aria-controls="offcanvasExample">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="container">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="offcanvas-body">
+                        <a class="navbar-brand m-0 d-flex justify-content-center align-items-center p-0 mb-4 d-block d-lg-none"
+                            href="#">
+                            <img class="mobile-navbar-logo" src="assets/images/logo.png" alt="navbar-logo">
+                        </a>
+                        <ul class="navbar-nav justify-content-center flex-grow-1 p-0 m-0 gap-3">
+                            <li class="nav-item">
+                                <i class="ri-chat-follow-up-fill" style="color: #3CB57A; font-size: larger;"></i>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60 active"
+                                    aria-current="page" href="#">متابعاتي</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="ri-apps-fill" style="font-size: larger;"></i>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#">نظامي</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="ri-sticky-note-add-fill" style="font-size: larger;"></i>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#">اشتراكاتي</a>
+                            </li>
+                            <div class="separator"></div>
+                            <li class="nav-item">
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#">En</a>
+                            </li>
+                            <div class="separator"></div>
+                            <li class="nav-item">
+                                <i class="ri-logout-box-line" style="font-size: larger; color: #E70B0B;"></i>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60" href="#"
+                                    style="color: #E70B0B!important;">تسجيل الخروج</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="logo">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <nav class="nav d-none d-md-flex">
+                    <ul class="d-flex list-unstyled m-0">
+                        <li><a href="/" class="nav-link active">متابعاتي</a></li>
+                        <li><a href="#" class="nav-link">نظامي</a></li>
+                        <li><a href="#" class="nav-link">اشتراكاتي</a></li>
+                    </ul>
+                </nav>
+                <div class="d-flex align-items-center">
+                    <div class="position-relative d-none d-md-block" style="margin-left: 15px;">
+                        <img src="assets/images/bell-icon.svg" style="width: 22px;">
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill d-flex align-items-center justify-content-center"
+                            style="font-size: 10px; width: 18px; height: 18px; padding: 0;">
+                            3
+                        </span>
+                    </div>
+                    <button class="btn btn-green ms-2 d-flex align-items-center justify-content-between w-100">
+                        <img src="assets/images/guidance_user-1.svg"
+                            style="width: 24px; height: 24px; border-radius: 50%; margin-left: 5px;">
+
+                        <span>رنا البسيوني</span>
+
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <a href="#"><span class="d-none d-md-block me-2">EN</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="content py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-2">
+                    <img src="assets/images/fat.png" alt="Image 1" class="img-fluid">
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-center align-items-center">
+                    <h4>رحلة فقدان الوزن</h4>
+                    <p>عدد المتابعات : 12 متابعة</p>
+                    <div class="progress-container">
+                        <div class="progress-piece complete"></div>
+                        <div class="progress-piece complete"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                        <div class="progress-piece"></div>
+                    </div>
+                    <div class="w-100 d-flex justify-content-between" style="max-width: 600px">
+                        <span>90 كجم</span>
+                        <span>60 كجم</span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="assets/images/thin.png" alt="Image 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <ul class="my-tab overflow-auto justify-content-center mb-3" id="pills-tab" role="tablist">
+                <div class="scrollable-tabs" id="pills-tab" role="tablist">
+                    <li class="my-tab-item ms-3" role="presentation">
+                        <button class="btn btn-submit tab-btn active" id="month1-tab" data-bs-toggle="pill"
+                            data-bs-target="#month1" type="button" role="tab" aria-controls="month1"
+                            aria-selected="true">الشهر الأول</button>
+                    </li>
+                    <li class="my-tab-item ms-3" role="presentation">
+                        <button class="btn btn-submit tab-btn" id="month2-tab" data-bs-toggle="pill"
+                            data-bs-target="#month2" type="button" role="tab" aria-controls="month2"
+                            aria-selected="false">الشهر الثاني</button>
+                    </li>
+                    <li class="my-tab-item" role="presentation">
+                        <button class="btn btn-submit tab-btn" id="month3-tab" data-bs-toggle="pill"
+                            data-bs-target="#month3" type="button" role="tab" aria-controls="month3"
+                            aria-selected="false">الشهر الثالث</button>
+                    </li>
+                </div>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Month 1 -->
+                <div class="tab-pane fade show active" id="month1" role="tabpanel" aria-labelledby="month1-tab"
+                    tabindex="0">
+                    <!-- Nested Tabs for الشهر الأول -->
+                    <ul class="my-tab justify-content-center" id="month1-followups-tab" role="tablist">
+                        <div class="scrollable-tabs" id="month1-followups-tab" role="tablist">
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn active" id="month1-followup1-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month1-followup1" type="button" role="tab"
+                                    aria-controls="month1-followup1" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">1</span>
+                                    </div>
+                                    <h6>الأسبوع الأول</h6>
+                                    <span class="text-wrap">1 نوفمبر إلى 7 نوفمبر 2024</span>
+                                </button>
+                            </li>
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month1-followup2-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month1-followup2" type="button" role="tab"
+                                    aria-controls="month1-followup2" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">2</span>
+                                    </div>
+                                    <h6>الأسبوع الثاني</h6>
+                                    <span class="text-wrap">1 نوفمبر إلى 7 نوفمبر 2024</span>
+                                </button>
+                            </li>
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month1-followup3-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month1-followup3" type="button" role="tab"
+                                    aria-controls="month1-followup3" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">3</span>
+                                    </div>
+                                    <h6>الأسبوع الثالث</h6>
+                                    <span class="text-wrap">1 نوفمبر إلى 7 نوفمبر 2024</span>
+                                </button>
+                            </li>
+                            <li class="nav-item py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month1-followup4-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month1-followup4" type="button" role="tab"
+                                    aria-controls="month1-followup4" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">4</span>
+                                    </div>
+                                    <h6>الأسبوع الرابع</h6>
+                                    <span class="text-wrap">1 نوفمبر إلى 7 نوفمبر 2024</span>
+                                </button>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="tab-content" id="month1-followups-content">
+                        <div class="tab-pane fade show active" id="month1-followup1" role="tabpanel"
+                            aria-labelledby="month1-followup1-tab" tabindex="0">
+                            <div class="text-black" style="font-weight: normal;">
+                                <div
+                                    class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 p-3">
+                                    <!-- Date Section -->
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <img src="assets/images/calender.svg" alt="Calendar" width="25"
+                                            class="img-fluid">
+                                        <h5 class="fw-bold mb-0">
+                                            <span style="color: var(--main-green); font-weight: bold;">تاريخ
+                                                اليوم</span>: 2 نوفمبر 2024
+                                        </h5>
+                                    </div>
+
+                                    <!-- Download Button -->
+                                    <a href="/" class="btn btn-submit bordered-btn text-nowrap"
+                                        style="width: fit-content;">
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                        تحميل وجبات اليوم
+                                    </a>
+
+
+                                </div>
+                                <!-- Days Tabs -->
+                                <ul class="my-tab justify-content-center" id="days-tab" role="tablist">
+                                    <div class="scrollable-tabs" id="days-tab" role="tablist">
+                                        <!-- Day 1 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn active" id="day1-tab"
+                                                data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab"
+                                                aria-controls="day1" aria-selected="true">
+                                                <div class="day-tab-content">
+                                                    <span>السبت</span>
+                                                    <div>1</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <!-- Day 2 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn" id="day2-tab"
+                                                data-bs-toggle="tab" data-bs-target="#day2" type="button" role="tab"
+                                                aria-controls="day2" aria-selected="false">
+                                                <div class="day-tab-content">
+                                                    <span>الأحد</span>
+                                                    <div>2</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <!-- Day 3 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn" id="day3-tab"
+                                                data-bs-toggle="tab" data-bs-target="#day3" type="button" role="tab"
+                                                aria-controls="day3" aria-selected="false">
+                                                <div class="day-tab-content">
+                                                    <span>الأثنين</span>
+                                                    <div>3</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <!-- Day 4 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn" id="day4-tab"
+                                                data-bs-toggle="tab" data-bs-target="#day4" type="button" role="tab"
+                                                aria-controls="day4" aria-selected="false">
+                                                <div class="day-tab-content">
+                                                    <span>الثلاثاء</span>
+                                                    <div>4</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <!-- Day 5 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn" id="day5-tab"
+                                                data-bs-toggle="tab" data-bs-target="#day5" type="button" role="tab"
+                                                aria-controls="day5" aria-selected="false">
+                                                <div class="day-tab-content">
+                                                    <span>الأربعاء</span>
+                                                    <div>5</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <!-- Day 6 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn" id="day6-tab"
+                                                data-bs-toggle="tab" data-bs-target="#day6" type="button" role="tab"
+                                                aria-controls="day6" aria-selected="false">
+                                                <div class="day-tab-content">
+                                                    <span>الخميس</span>
+                                                    <div>6</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <!-- Day 7 -->
+                                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                            <button class="btn btn-submit day-tab-btn" id="day7-tab" data-bs-toggle="tab"
+                                                data-bs-target="#day7" type="button" role="tab" aria-controls="day7"
+                                                aria-selected="false">
+                                                <div class="day-tab-content">
+                                                    <span>الجمعة</span>
+                                                    <div>7</div>
+                                                </div>
+                                            </button>
+                                        </li>
+                                    </div>
+                                </ul>
+
+                                <!-- Days Content -->
+                                <div class="tab-content" id="days-content">
+                                    <!-- Day 1 Content -->
+                                    <div class="tab-pane fade show active" id="day1" role="tabpanel"
+                                        aria-labelledby="day1-tab" tabindex="0">
+                                        <p>محتوى اليوم الأول.</p>
+                                    </div>
+                                    <!-- Day 2 Content -->
+                                    <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab"
+                                        tabindex="0">
+                                        <p>محتوى اليوم الثاني.</p>
+                                    </div>
+                                    <!-- Day 3 Content -->
+                                    <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab"
+                                        tabindex="0">
+                                        <p>محتوى اليوم الثالث.</p>
+                                    </div>
+                                    <!-- Day 4 Content -->
+                                    <div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab"
+                                        tabindex="0">
+                                        <p>محتوى اليوم الرابع.</p>
+                                    </div>
+                                    <!-- Day 5 Content -->
+                                    <div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab"
+                                        tabindex="0">
+                                        <p>محتوى اليوم الخامس.</p>
+                                    </div>
+                                    <!-- Day 6 Content -->
+                                    <div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"
+                                        tabindex="0">
+                                        <p>محتوى اليوم السادس.</p>
+                                    </div>
+                                    <!-- Day 7 Content -->
+                                    <div class="tab-pane fade" id="day7" role="tabpanel" aria-labelledby="day7-tab"
+                                        tabindex="0">
+                                        <p>محتوى اليوم السابع.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="month1-followup2" role="tabpanel" aria-labelledby="month1-followup2-tab"
+                    tabindex="0">
+                </div>
+                <div class="tab-pane fade" id="month1-followup3" role="tabpanel" aria-labelledby="month1-followup3-tab"
+                    tabindex="0">
+                    <div class="text-black" style="font-weight: normal;">
+                    </div>
+                    <div class="tab-pane fade" id="month1-followup4" role="tabpanel"
+                        aria-labelledby="month1-followup4-tab" tabindex="0"></div>
+                </div>
+            </div>
+
+            <!-- Month 2 -->
+            <div class="tab-pane fade" id="month2" role="tabpanel" aria-labelledby="month2-tab" tabindex="0">
+                <!-- Nested Tabs for الشهر الثاني -->
+                <ul class="my-tab justify-content-center" id="month2-followups-tab" role="tablist">
+                    <div class="scrollable-tabs" id="month2-followups-tab" role="tablist">
+                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn active" id="month2-followup1-tab"
+                                data-bs-toggle="tab" data-bs-target="#month2-followup1" type="button" role="tab"
+                                aria-controls="month2-followup1" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">1</span>
+                                </div>
+                                <h6>الأسبوع الأول</h6>
+                                <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn" id="month2-followup2-tab" data-bs-toggle="tab"
+                                data-bs-target="#month2-followup2" type="button" role="tab"
+                                aria-controls="month2-followup2" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">2</span>
+                                </div>
+                                <h6>الأسبوع الثاني</h6>
+                                <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn" id="month2-followup3-tab" data-bs-toggle="tab"
+                                data-bs-target="#month2-followup3" type="button" role="tab"
+                                aria-controls="month2-followup3" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">3</span>
+                                </div>
+                                <h6>الأسبوع الثالث</h6>
+                                <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                            </button>
+                        </li>
+                        <li class="nav-item py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn" id="month2-followup4-tab" data-bs-toggle="tab"
+                                data-bs-target="#month2-followup4" type="button" role="tab"
+                                aria-controls="month2-followup4" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">4</span>
+                                </div>
+                                <h6>الأسبوع الرابع</h6>
+                                <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                            </button>
+                        </li>
+                    </div>
+                </ul>
+                <div class="tab-content" id="month2-followups-content">
+                    <div class="tab-pane fade show active" id="month2-followup1" role="tabpanel"
+                        aria-labelledby="month2-followup1-tab" tabindex="0">
+                    </div>
+                    <div class="tab-pane fade" id="month2-followup2" role="tabpanel"
+                        aria-labelledby="month2-followup2-tab" tabindex="0">
+                    </div>
+                    <div class="tab-pane fade" id="month2-followup3" role="tabpanel"
+                        aria-labelledby="month2-followup3-tab" tabindex="0"></div>
+                    <div class="tab-pane fade" id="month2-followup4" role="tabpanel"
+                        aria-labelledby="month2-followup4-tab" tabindex="0"></div>
+                </div>
+            </div>
+
+            <!-- Month 3 -->
+            <div class="tab-pane fade" id="month3" role="tabpanel" aria-labelledby="month3-tab" tabindex="0">
+                <!-- Nested Tabs for الشهر الثالث -->
+                <ul class="my-tab justify-content-center" id="month3-followups-tab" role="tablist">
+                    <div class="scrollable-tabs" id="month3-followups-tab" role="tablist">
+                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn active" id="month3-followup1-tab"
+                                data-bs-toggle="tab" data-bs-target="#month3-followup1" type="button" role="tab"
+                                aria-controls="month3-followup1" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">1</span>
+                                </div>
+                                <h6>الأسبوع الأول</h6>
+                                <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn" id="month3-followup2-tab" data-bs-toggle="tab"
+                                data-bs-target="#month3-followup2" type="button" role="tab"
+                                aria-controls="month3-followup2" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">2</span>
+                                </div>
+                                <h6>الأسبوع الثاني</h6>
+                                <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn" id="month3-followup3-tab" data-bs-toggle="tab"
+                                data-bs-target="#month3-followup3" type="button" role="tab"
+                                aria-controls="month3-followup3" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">3</span>
+                                </div>
+                                <h6>الأسبوع الثالث</h6>
+                                <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                            </button>
+                        </li>
+                        <li class="nav-item py-3" role="presentation">
+                            <button class="btn btn-submit followup-btn" id="month3-followup4-tab" data-bs-toggle="tab"
+                                data-bs-target="#month3-followup4" type="button" role="tab"
+                                aria-controls="month3-followup4" aria-selected="true">
+                                <div class="image-wrapper">
+                                    <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                    <span class="number">4</span>
+                                </div>
+                                <h6>الأسبوع الرابع</h6>
+                                <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                            </button>
+                        </li>
+                    </div>
+                </ul>
+                <div class="tab-content" id="month3-followups-content">
+                    <div class="tab-pane fade show active" id="month3-followup1" role="tabpanel"
+                        aria-labelledby="month3-followup1-tab" tabindex="0">
+                    </div>
+                    <div class="tab-pane fade" id="month3-followup2" role="tabpanel"
+                        aria-labelledby="month3-followup2-tab" tabindex="0">
+                    </div>
+                    <div class="tab-pane fade" id="month3-followup3" role="tabpanel"
+                        aria-labelledby="month3-followup3-tab" tabindex="0">
+                    </div>
+                    <div class="tab-pane fade" id="month3-followup4" role="tabpanel"
+                        aria-labelledby="month3-followup4-tab" tabindex="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row text-center text-md-end pb-5">
+                <div class="col-md-4 text-center text-md-end">
+                    <img src="assets/images/white-logo.png" alt="Bloom Regime Logo">
+                    <div class="d-flex justify-content-center justify-content-md-start social-icons mt-3">
+                        <a href="#"><img src="assets/images/facebook-icon.svg" alt="Facebook"></a>
+                        <a href="#"><img src="assets/images/instagram-icon.svg" alt="Instagram"></a>
+                        <a href="#"><img src="assets/images/twitter-icon.svg" alt="Twitter"></a>
+                        <a href="#"><img src="assets/images/whatsapp-icon.svg" alt="WhatsApp"></a>
+                        <a href="#"><img src="assets/images/snapchat-icon.svg" alt="Snapchat"></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mt-5 mt-md-0 text-md-end">
+                    <h4 class="fw-bold">تواصل معنا</h4>
+                    <p>00201044828371</p>
+                    <p><a href="mailto:info@bloomregime.com">info@bloomregime.com</a></p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-md-end">
+                    <h4 class="fw-bold">البيانات القانونية</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms-and-conditions.html">سياسة الاستخدام</a></li>
+                        <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center pt-3 pb-4">حقوق الطبع والنشر &copy; 2025 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressCircles = document.querySelectorAll('.progress-circle');
+
+            progressCircles.forEach(circle => {
+                const progress = circle.getAttribute('data-progress');
+                const color = circle.getAttribute('data-color');
+
+                // Set CSS variables for progress and color
+                circle.style.setProperty('--progress', progress);
+                circle.style.setProperty('--progress-color', color);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
