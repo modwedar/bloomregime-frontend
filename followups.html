@@ -767,42 +767,862 @@
                 </div>
 
                 <!-- Month 2 -->
-                
+                <div class="tab-pane fade" id="month2" role="tabpanel" aria-labelledby="month2-tab" tabindex="0">
+                    <!-- Nested Tabs for الشهر الثاني -->
+                    <ul class="my-tab justify-content-center" id="month2-followups-tab" role="tablist">
+                        <div class="scrollable-tabs" id="month2-followups-tab" role="tablist">
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn active" id="month2-followup1-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month2-followup1" type="button" role="tab"
+                                    aria-controls="month2-followup1" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">1</span>
+                                    </div>
+                                    <h6>الأسبوع الأول</h6>
+                                    <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                                </button>
+                            </li>
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month2-followup2-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month2-followup2" type="button" role="tab"
+                                    aria-controls="month2-followup2" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">2</span>
+                                    </div>
+                                    <h6>الأسبوع الثاني</h6>
+                                    <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                                </button>
+                            </li>
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month2-followup3-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month2-followup3" type="button" role="tab"
+                                    aria-controls="month2-followup3" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">3</span>
+                                    </div>
+                                    <h6>الأسبوع الثالث</h6>
+                                    <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                                </button>
+                            </li>
+                            <li class="nav-item py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month2-followup4-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month2-followup4" type="button" role="tab"
+                                    aria-controls="month2-followup4" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">4</span>
+                                    </div>
+                                    <h6>الأسبوع الرابع</h6>
+                                    <span class="text-wrap">1 ديسمبر إلى 7 ديسمبر 2024</span>
+                                </button>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="tab-content" id="month2-followups-content">
+                        <div class="tab-pane fade show active" id="month2-followup1" role="tabpanel"
+                            aria-labelledby="month2-followup1-tab" tabindex="0">
+                            <div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="month2-followup2" role="tabpanel"
+                            aria-labelledby="month2-followup2-tab" tabindex="0">
+                            <div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div></div>
+                        <div class="tab-pane fade" id="month2-followup3" role="tabpanel"
+                            aria-labelledby="month2-followup3-tab" tabindex="0"><div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div></div>
+                        <div class="tab-pane fade" id="month2-followup4" role="tabpanel"
+                            aria-labelledby="month2-followup4-tab" tabindex="0"><div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
 
                 <!-- Month 3 -->
                 <div class="tab-pane fade" id="month3" role="tabpanel" aria-labelledby="month3-tab" tabindex="0">
                     <!-- Nested Tabs for الشهر الثالث -->
-                    <ul class="nav nav-tabs" id="month3-followups-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="month3-followup1-tab" data-bs-toggle="tab"
-                                data-bs-target="#month3-followup1" type="button" role="tab"
-                                aria-controls="month3-followup1" aria-selected="true">Follow-up 1</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="month3-followup2-tab" data-bs-toggle="tab"
-                                data-bs-target="#month3-followup2" type="button" role="tab"
-                                aria-controls="month3-followup2" aria-selected="false">Follow-up 2</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="month3-followup3-tab" data-bs-toggle="tab"
-                                data-bs-target="#month3-followup3" type="button" role="tab"
-                                aria-controls="month3-followup3" aria-selected="false">Follow-up 3</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="month3-followup4-tab" data-bs-toggle="tab"
-                                data-bs-target="#month3-followup4" type="button" role="tab"
-                                aria-controls="month3-followup4" aria-selected="false">Follow-up 4</button>
-                        </li>
+                    <ul class="my-tab justify-content-center" id="month3-followups-tab" role="tablist">
+                        <div class="scrollable-tabs" id="month3-followups-tab" role="tablist">
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn active" id="month3-followup1-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month3-followup1" type="button" role="tab"
+                                    aria-controls="month3-followup1" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">1</span>
+                                    </div>
+                                    <h6>الأسبوع الأول</h6>
+                                    <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                                </button>
+                            </li>
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month3-followup2-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month3-followup2" type="button" role="tab"
+                                    aria-controls="month3-followup2" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">2</span>
+                                    </div>
+                                    <h6>الأسبوع الثاني</h6>
+                                    <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                                </button>
+                            </li>
+                            <li class="nav-item ms-1 ms-sm-3 py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month3-followup3-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month3-followup3" type="button" role="tab"
+                                    aria-controls="month3-followup3" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">3</span>
+                                    </div>
+                                    <h6>الأسبوع الثالث</h6>
+                                    <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                                </button>
+                            </li>
+                            <li class="nav-item py-3" role="presentation">
+                                <button class="btn btn-submit followup-btn" id="month3-followup4-tab"
+                                    data-bs-toggle="tab" data-bs-target="#month3-followup4" type="button" role="tab"
+                                    aria-controls="month3-followup4" aria-selected="true">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="assets/images/circle_followup.svg" alt="">
+                                        <span class="number">4</span>
+                                    </div>
+                                    <h6>الأسبوع الرابع</h6>
+                                    <span class="text-wrap">1 يناير إلى 7 يناير 2025</span>
+                                </button>
+                            </li>
+                        </div>
                     </ul>
                     <div class="tab-content" id="month3-followups-content">
                         <div class="tab-pane fade show active" id="month3-followup1" role="tabpanel"
-                            aria-labelledby="month3-followup1-tab" tabindex="0">Content for Follow-up 1</div>
+                            aria-labelledby="month3-followup1-tab" tabindex="0">
+                            <div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane fade" id="month3-followup2" role="tabpanel"
-                            aria-labelledby="month3-followup2-tab" tabindex="0">Content for Follow-up 2</div>
+                            aria-labelledby="month3-followup2-tab" tabindex="0">
+                            <div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div></div>
                         <div class="tab-pane fade" id="month3-followup3" role="tabpanel"
-                            aria-labelledby="month3-followup3-tab" tabindex="0">Content for Follow-up 3</div>
+                            aria-labelledby="month3-followup3-tab" tabindex="0"><div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div></div>
                         <div class="tab-pane fade" id="month3-followup4" role="tabpanel"
-                            aria-labelledby="month3-followup4-tab" tabindex="0">Content for Follow-up 4</div>
+                            aria-labelledby="month3-followup4-tab" tabindex="0"><div class="text-black" style="font-weight: normal;">
+                                <h4 class="fw-bold">تفاصيل المتابعة</h4>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="text-left">
+                                                <p class="fw-bold">رقم المتابعة: <span>123</span></p>
+                                                <p class="fw-bold">الوزن الحالي: <span>70 كجم</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right">
+                                                <p class="fw-bold">تاريخ المتابعة القادمة: <span>2023-10-15</span></p>
+                                                <p class="fw-bold">الوزن المستهدف: <span>65 كجم</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">معدل الحرق</h6>
+                                            <div class="progress-circle" data-progress="75" data-color="blue">
+                                                <span class="progress-value">75%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة السوائل</h6>
+                                            <div class="progress-circle" data-progress="50" data-color="red">
+                                                <span class="progress-value">50%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة العضل</h6>
+                                            <div class="progress-circle" data-progress="90" data-color="green">
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">نسبة الأملاح</h6>
+                                            <div class="progress-circle" data-progress="30" data-color="purple">
+                                                <span class="progress-value">30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 mb-4"> <!-- تمت إضافة mb-4 -->
+                                            <h6 class="mb-3">تناسق الجسم</h6>
+                                            <div class="progress-circle" data-progress="60" data-color="yellow">
+                                                <span class="progress-value">60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="row justify-content-between">
+                                        <!-- First Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة inbody الخاصة بك</a>
+                                        </div>
+
+                                        <!-- Second Inner Row -->
+                                        <div class="col-md-5 d-flex align-items-center mb-3">
+                                            <img src="assets/images/pdf.png" alt="pdf" class="img-fluid" width="25">
+                                            <a href="#">صورة التحاليل الخاصة بك</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>تم متابعة الحالة بواسطة <span style="color: var(--main-green)">د/ أية
+                                            السيد</span></p>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="assets/images/doc.svg" alt="doc" width="30">
+                                        <h5 class="fw-bold mb-0">نصائح الطبيب</h5>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="doc-advices">
+                                        <p>1- هنا نصائح الطبيب 1</p>
+                                        <p>2- هنا نصائح الطبيب 2</p>
+                                        <p>3- هنا نصائح الطبيب 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 text-center">
+                                    <a href="/" class="btn btn-submit bordered-btn col-7 col-md-3">
+                                        الذهاب لنظامي
+                                        <i class="ri-arrow-left-long-line"></i></a>
+                                </div>
+                            </div></div>
                     </div>
                 </div>
             </div>
