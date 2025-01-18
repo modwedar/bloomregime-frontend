@@ -815,3 +815,9 @@ a {
       width: 40% !important;
   }
 }
+
+.doc-advices {
+  border: 2px dashed var(--main-green);
+  padding: 15px;
+  border-radius: 20px;
+}
