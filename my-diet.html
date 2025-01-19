@@ -269,11 +269,11 @@
                             <li class="nav-item">
                                 <i class="ri-chat-follow-up-fill" style="color: #3CB57A; font-size: larger;"></i>
                                 <a class="mobile-nav-link transition-300ms text-body opacity-60"
-                                    aria-current="page" href="#">متابعاتي</a>
+                                    aria-current="page" href="/followups.html">متابعاتي</a>
                             </li>
                             <li class="nav-item">
                                 <i class="ri-apps-fill" style="font-size: larger;"></i>
-                                <a class="mobile-nav-link transition-300ms text-body opacity-60 active" href="#">نظامي</a>
+                                <a class="mobile-nav-link transition-300ms text-body opacity-60 active" href="my-diet.html">نظامي</a>
                             </li>
                             <li class="nav-item">
                                 <i class="ri-sticky-note-add-fill" style="font-size: larger;"></i>
@@ -299,8 +299,8 @@
                 </div>
                 <nav class="nav d-none d-md-flex">
                     <ul class="d-flex list-unstyled m-0">
-                        <li><a href="/" class="nav-link">متابعاتي</a></li>
-                        <li><a href="#" class="nav-link active">نظامي</a></li>
+                        <li><a href="/followups.html" class="nav-link">متابعاتي</a></li>
+                        <li><a href="/my-diet.html" class="nav-link active">نظامي</a></li>
                         <li><a href="#" class="nav-link">اشتراكاتي</a></li>
                     </ul>
                 </nav>
@@ -797,18 +797,6 @@
     <!-- <script src="js/main.js"></script> -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const progressCircles = document.querySelectorAll('.progress-circle');
-
-            progressCircles.forEach(circle => {
-                const progress = circle.getAttribute('data-progress');
-                const color = circle.getAttribute('data-color');
-
-                // Set CSS variables for progress and color
-                circle.style.setProperty('--progress', progress);
-                circle.style.setProperty('--progress-color', color);
-            });
-        });
 
     </script>
 </body>
